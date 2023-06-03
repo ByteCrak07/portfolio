@@ -2,6 +2,7 @@ import './globals.css';
 import { Inter } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import { appMetadata, jsonLdWebPage, jsonLdPerson } from '@/seo';
+import ConsoleTxt from '@/components/console-txt';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -50,6 +51,7 @@ export default function RootLayout({
       <body className={`${inter.className} flex flex-col min-h-screen dark`}>
         {children}
         <Analytics />
+        <ConsoleTxt />
       </body>
     </html>
   );
