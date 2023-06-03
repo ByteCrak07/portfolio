@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <main className='flex-grow bg-gray-800 text-white'>
+    <main className='flex-grow'>
       <div className='h-screen flex-col gap-y-2'>
         <h1 className='text-xl'>This site is still under development😕</h1>
         <h2 className='text-lg'>
