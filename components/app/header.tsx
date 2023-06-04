@@ -46,8 +46,8 @@ const Header: FC = () => {
 
   return (
     <>
-      <div className='fixed w-full'>
-        <header className='glass-effect flex select-none items-center justify-between rounded-b-xl rounded-t-none px-5 py-3 text-lg sm:mx-10 sm:my-5 sm:rounded-xl sm:px-10 sm:py-4'>
+      <div className='fixed z-50 w-full'>
+        <header className='glass-effect flex select-none items-center justify-between rounded-b-xl rounded-t-none px-5 py-3 text-lg font-semibold sm:mx-10 sm:my-5 sm:rounded-xl sm:px-10 sm:py-4'>
           <AnimBorder rounded>
             <Link href='/' aria-label='Home'>
               <Avatar className='glass-effect h-16 w-16'>
@@ -77,7 +77,7 @@ const Header: FC = () => {
                     <NavigationMenuLink
                       className={cn(
                         navigationMenuTriggerStyle() +
-                          ' bg-transparent text-lg hover:bg-black'
+                          ' bg-transparent text-lg font-semibold hover:bg-black'
                       )}
                     >
                       {menu.name}

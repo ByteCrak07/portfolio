@@ -1,11 +1,11 @@
 import { Metadata } from 'next';
 
-const description = `Hey I'm Abil Savio, a Full Stack Web & Blockchain Developer from Kerala. I specialize in crafting seamless digital experiences. Through my portfolio, you can explore my projects, as well as my blog's informative posts and tutorials, and my accomplishments.`;
+const description = `Hey I'm Abil Savio, a Full Stack Web & Blockchain Developer from Kerala, India. I specialize in crafting seamless digital experiences. Through my portfolio, you can explore my projects, as well as my blog's informative posts and tutorials, and my accomplishments.`;
 const url = 'https://abilsavio.me';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Abil Savio',
+    default: 'Abil Savio | Full Stack Web & Blockchain Developer',
     template: '%s | Abil Savio',
   },
   description: description,
