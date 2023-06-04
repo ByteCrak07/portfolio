@@ -34,6 +34,8 @@
     --ring: 215 20.2% 65.1%;
 
     --radius: 0.5rem;
+
+    --glow-shadow-color: rgba(130, 230, 188, 0.75);
   }
 
   .dark {
@@ -124,4 +126,37 @@
   50% {
     color: white;
   }
+}
+
+.glow-box {
+  box-shadow: 0px 0px 300px 0px var(--glow-shadow-color);
+  transition: box-shadow 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glow-box-sm {
+  box-shadow: 0px 0px 6px 0px var(--glow-shadow-color);
+  transition: box-shadow 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glow-box-sm-hover {
+  position: relative;
+}
+
+.glow-box-sm-hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: -1;
+  border-radius: 100%;
+  transition: box-shadow 1s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.2s ease-in-out;
+  box-shadow: 0px 0px 20px 5px var(--glow-shadow-color);
+}
+
+.glow-box-sm-hover:hover::after {
+  opacity: 1;
 }

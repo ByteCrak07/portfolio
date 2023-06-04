@@ -38,12 +38,13 @@ const AnimText: FC = () => {
   const textRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // changing dp shadow color
-    const dpElement = document.getElementsByClassName('dp')[0] as HTMLElement;
-    if (dpElement)
-      dpElement.style.boxShadow = `0px 0px 300px -10px ${colors[
-        textIndex
-      ].replace(', 1)', ', 0.75)')}`;
+    // changing glow shadow color
+    const rootElement = document.querySelector(':root') as HTMLElement;
+    if (rootElement)
+      rootElement.style.setProperty(
+        '--glow-shadow-color',
+        `${colors[textIndex].replace(', 1)', ', 0.75)')}`
+      );
 
     let ctx = gsap.context(() => {
       let textAnimation = gsap.timeline({

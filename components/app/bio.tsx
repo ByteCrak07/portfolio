@@ -21,7 +21,7 @@ const Bio: FC = () => {
     >
       <div className='absolute left-0 top-0 flex gap-x-0.5' aria-hidden>
         <button
-          className={`flex items-center px-3 py-2 text-sm ${
+          className={`flex items-center px-3 py-2 text-sm focus:outline-none ${
             isBioText ? 'bg-gray-700' : 'bg-gray-900'
           }`}
           onClick={() => setIsBioText(true)}
@@ -30,7 +30,7 @@ const Bio: FC = () => {
           &nbsp;Bio.txt
         </button>
         <button
-          className={`flex items-center rounded-br-md px-3 py-2 text-sm ${
+          className={`flex items-center rounded-br-md px-3 py-2 text-sm focus:outline-none ${
             !isBioText ? 'bg-gray-700' : 'bg-gray-900'
           }`}
           onClick={() => setIsBioText(false)}
