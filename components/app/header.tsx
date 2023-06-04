@@ -49,9 +49,14 @@ const Header: FC = () => {
       <div className='fixed w-full'>
         <header className='glass-effect flex select-none items-center justify-between rounded-b-xl rounded-t-none px-5 py-3 text-lg sm:mx-10 sm:my-5 sm:rounded-xl sm:px-10 sm:py-4'>
           <AnimBorder rounded>
-            <Link href='/'>
+            <Link href='/' aria-label='Home'>
               <Avatar className='glass-effect h-16 w-16'>
-                <AvatarImage src='/icons/android-chrome-192x192.png' />
+                <AvatarImage
+                  src='/icons/android-chrome-192x192.png'
+                  alt='Hacker Pepe'
+                  height={64}
+                  width={64}
+                />
                 <AvatarFallback>
                   <Image
                     src='/icons/favicon-16x16.png'
