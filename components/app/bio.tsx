@@ -17,7 +17,7 @@ const Bio: FC = () => {
 
   return (
     <div
-      className={`${inconsolataFont.className} relative mt-10 overflow-hidden rounded-xl bg-black p-10 pt-14`}
+      className={`${inconsolataFont.className} relative mt-2 overflow-hidden rounded-xl bg-black p-10 pt-14 sm:mt-5`}
     >
       <div className='absolute left-0 top-0 flex gap-x-0.5' aria-hidden>
         <button
@@ -44,8 +44,15 @@ const Bio: FC = () => {
           !isBioText && 'hidden'
         }`}
       >
-        I&apos;m Abil Savio, a Full Stack Web & Blockchain Developer from
-        Kerala, India.
+        I&apos;m Abil Savio, a Full Stack Web & Blockchain Developer from{' '}
+        <a
+          className='hover:cursor-pointer hover:underline'
+          target='_blank'
+          href='https://goo.gl/maps/Uf5wf5zKRc2W3EhE8'
+          rel='noopener noreferrer'
+        >
+          Kerala, India.
+        </a>
         <br />I specialize in crafting seamless digital experiences.
         <br />I also seek inspiration and new experiences by traveling and
         discovering the world around me. With a programmer&apos;s mindset, I
@@ -57,7 +64,7 @@ const Bio: FC = () => {
         aria-hidden
         className={`${
           jetBrainsMonoFont.className
-        } max-w-none text-lg sm:max-w-[70vw] sm:text-xl ${
+        } max-w-none text-base sm:max-w-[70vw] sm:text-xl ${
           isBioText && 'hidden'
         }`}
       >
@@ -65,7 +72,7 @@ const Bio: FC = () => {
           <div className='rounded-l bg-green-600 px-2 text-black'>
             /home/portfolio
           </div>
-          <div className='border-[14px] border-r-0 border-b-transparent border-l-green-600 border-t-transparent'></div>
+          <div className='border-[12px] border-r-0 border-b-transparent border-l-green-600 border-t-transparent sm:border-[14px] sm:border-r-0'></div>
           <div>&nbsp;cat bio.txt</div>
         </div>
         <div className='my-0.5'>
@@ -81,7 +88,7 @@ const Bio: FC = () => {
           <div className='rounded-l bg-green-600 px-2 text-black'>
             /home/portfolio
           </div>
-          <div className='border-[14px] border-r-0 border-b-transparent border-l-green-600 border-t-transparent'></div>
+          <div className='border-[12px] border-r-0 border-b-transparent border-l-green-600 border-t-transparent sm:border-[14px] sm:border-r-0'></div>
           <div className='ml-1 w-2 bg-white bg-opacity-80'>|</div>
         </div>
       </div>

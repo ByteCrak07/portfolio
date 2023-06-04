@@ -13,6 +13,9 @@ const style: {
   },
 };
 
+// exposing setIsVowel function from AnimIntroText component
+let setIsVowel = (isVowel: boolean) => {};
+
 const AnimText: FC = () => {
   const [init, setInit] = useState(true);
   const [textIndex, setTextIndex] = useState(0);
@@ -22,7 +25,7 @@ const AnimText: FC = () => {
     'Creator',
     'Learner',
     'Gamer',
-    'Xplorer',
+    'Explorer',
   ];
   const colors = [
     'rgba(130, 230, 188, 1)',
@@ -45,9 +48,13 @@ const AnimText: FC = () => {
     let ctx = gsap.context(() => {
       let textAnimation = gsap.timeline({
         onComplete: () => {
-          setInit(false);
           let newIndex = 0;
           if (textIndex !== texts.length - 1) newIndex = textIndex + 1;
+
+          if (texts[newIndex].charAt(0).match(/[aeiou]/gi)) setIsVowel(true);
+          else setIsVowel(false);
+
+          setInit(false);
           setTextIndex(newIndex);
         },
       });
@@ -97,7 +104,13 @@ const AnimText: FC = () => {
 };
 
 const AnimIntroText: FC = () => {
+  const [text, setText] = useState(`Hey I'm a`);
   const textRef = useRef<HTMLDivElement>(null);
+
+  setIsVowel = (isVowel: boolean) => {
+    if (isVowel) setText(`Hey I'm an`);
+    else setText(`Hey I'm a`);
+  };
 
   useEffect(() => {
     let ctx = gsap.context(() => {
@@ -116,7 +129,7 @@ const AnimIntroText: FC = () => {
   return (
     <>
       <div style={style.words} ref={textRef}>
-        {`Hey I'm a`
+        {text
           .split('')
           .map((i, index) =>
             i == ' ' ? (
