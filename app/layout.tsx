@@ -1,10 +1,11 @@
 import './globals.css';
-import { Inter } from 'next/font/google';
+import { Bitter } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import { appMetadata, jsonLdWebPage, jsonLdPerson } from '@/seo';
-import ConsoleTxt from '@/components/console-txt';
+import ConsoleTxt from '@/components/app/console-txt';
+import Header from '@/components/app/header';
 
-const inter = Inter({ subsets: ['latin'] });
+const bitterFont = Bitter({ subsets: ['latin'] });
 
 export const metadata = appMetadata;
 
@@ -48,7 +49,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdPerson) }}
         />
       </head>
-      <body className={`${inter.className} flex flex-col min-h-screen dark`}>
+      <body
+        className={`${bitterFont.className} dark flex min-h-screen flex-col`}
+      >
+        <Header />
         {children}
         <Analytics />
         <ConsoleTxt />

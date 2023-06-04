@@ -1,19 +1,9 @@
 export default function Home() {
   return (
-    <main className='flex-grow'>
-      <div className='h-screen flex-col gap-y-2'>
+    <main className='flex flex-grow'>
+      <div className='flex flex-grow flex-col items-center justify-center gap-y-2'>
         <h1 className='text-xl'>This site is still under development😕</h1>
-        <h2 className='text-lg'>
-          Check my resume{' '}
-          <a
-            href='https://drive.google.com/file/d/106k85SZrdnckTypWfRPZUEMr5agtEyGC/view?usp=sharing'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <button>here</button>
-          </a>{' '}
-          👈
-        </h2>
+        <h2 className='text-lg'>You can view my resume from the header</h2>
       </div>
     </main>
   );
