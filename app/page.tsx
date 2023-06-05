@@ -35,6 +35,7 @@ export default function Home() {
                 target='_blank'
                 rel='noopener noreferrer'
                 bgColor='#fff'
+                aria-label='Github'
               />
             </div>
             <div className='glow-box-sm glow-box-sm-hover rounded-full'>
@@ -43,6 +44,7 @@ export default function Home() {
                 target='_blank'
                 rel='noopener noreferrer'
                 fgColor='#fff'
+                aria-label='LinkedIn'
               />
             </div>
             <div className='glow-box-sm glow-box-sm-hover rounded-full'>
@@ -51,6 +53,7 @@ export default function Home() {
                 target='_blank'
                 rel='noopener noreferrer'
                 fgColor='#fff'
+                aria-label='Twitter'
               />
             </div>
             <div className='glow-box-sm glow-box-sm-hover rounded-full'>
@@ -59,6 +62,7 @@ export default function Home() {
                 target='_blank'
                 rel='noopener noreferrer'
                 fgColor='#fff'
+                aria-label='Medium'
               />
             </div>
             <div className='glow-box-sm glow-box-sm-hover rounded-full'>
@@ -67,6 +71,7 @@ export default function Home() {
                 target='_blank'
                 rel='noopener noreferrer'
                 fgColor='#fff'
+                aria-label='Instagram'
               />
             </div>
           </div>
