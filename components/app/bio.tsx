@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { FileText, Terminal } from 'lucide-react';
 import { Inconsolata, JetBrains_Mono } from 'next/font/google';
 
@@ -14,10 +14,34 @@ const jetBrainsMonoFont = JetBrains_Mono({
 
 const Bio: FC = () => {
   const [isBioText, setIsBioText] = useState(true);
+  const [completedTxtRender, setCompletedTxtRender] = useState(false);
+  const [completedTerminalRender, setCompletedTerminalRender] = useState(false);
+
+  // to run when the page loads, animate bio.txt
+  useEffect(() => {
+    const h2Elements = document.querySelectorAll('.bio-text');
+    const h2ElementsArray = Array.from(h2Elements);
+
+    (async () => {
+      for (const h2 of h2ElementsArray) {
+        await new Promise((resolve) => setTimeout(resolve, 5));
+        h2.removeAttribute('class');
+      }
+
+      setCompletedTxtRender(true);
+    })();
+  }, []);
+
+  async function runTerminal() {
+    if (completedTerminalRender) return;
+
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    setCompletedTerminalRender(true);
+  }
 
   return (
     <div
-      className={`${inconsolataFont.className} relative mt-2 overflow-hidden rounded-xl bg-black p-10 pt-14 sm:mt-5`}
+      className={`${inconsolataFont.className} relative mt-3 overflow-hidden rounded-xl bg-black p-5 pt-14 sm:mt-5 sm:p-10 sm:pt-14`}
     >
       <div className='absolute left-0 top-0 flex gap-x-0.5' aria-hidden>
         <button
@@ -33,49 +57,98 @@ const Bio: FC = () => {
           className={`flex items-center rounded-br-md px-3 py-2 text-sm focus:outline-none ${
             !isBioText ? 'bg-gray-700' : 'bg-gray-900'
           }`}
-          onClick={() => setIsBioText(false)}
+          onClick={() => {
+            setIsBioText(false);
+            runTerminal();
+          }}
         >
           <Terminal size={14} />
           &nbsp;Terminal
         </button>
       </div>
       <h2
-        className={`max-w-none text-xl sm:max-w-[70vw] sm:text-2xl ${
-          !isBioText && 'hidden'
-        }`}
+        className={`absolute inset-0 top-10 max-w-none p-5 pt-2 text-lg sm:p-10 sm:pt-5 sm:text-2xl ${
+          isBioText ? 'bg-black' : 'hidden'
+        } ${completedTxtRender ? '' : 'pointer-events-none select-none'}`}
       >
-        I&apos;m Abil Savio, a Full Stack Web & Blockchain Developer from{' '}
+        {`I'm Abil Savio, a Full Stack Web & Blockchain Developer from`
+          .split('')
+          .map((i, index) =>
+            i == ' ' ? (
+              <Letter key={`intro-${index}`} space letter={i} />
+            ) : (
+              <Letter key={`intro-${index}`} letter={i} />
+            )
+          )}{' '}
         <a
-          className='hover:cursor-pointer hover:underline'
+          className={completedTxtRender ? 'hover:underline' : ''}
           target='_blank'
           href='https://goo.gl/maps/Uf5wf5zKRc2W3EhE8'
           rel='noopener noreferrer'
         >
-          Kerala, India.
+          {`Kerala, India.`
+            .split('')
+            .map((i, index) =>
+              i == ' ' ? (
+                <Letter key={`intro-${index}`} space letter={i} />
+              ) : (
+                <Letter key={`intro-${index}`} letter={i} />
+              )
+            )}
         </a>
-        <br />I specialize in crafting seamless digital experiences.
-        <br />I also seek inspiration and new experiences by traveling and
-        discovering the world around me. With a programmer&apos;s mindset, I
-        continuously strive to learn and adapt, always seeking new challenges
-        and opportunities.
-        <span className='blinking-cursor'>|</span>
+        <br />
+        {`I specialize in crafting seamless digital experiences.`
+          .split('')
+          .map((i, index) =>
+            i == ' ' ? (
+              <Letter key={`intro-${index}`} space letter={i} />
+            ) : (
+              <Letter key={`intro-${index}`} letter={i} />
+            )
+          )}
+        <br />
+        {`I also seek inspiration and new experiences by traveling and discovering the world around me. With a programmer's mindset, I continuously strive to learn and adapt, always seeking new challenges and opportunities.`
+          .split('')
+          .map((i, index) =>
+            i == ' ' ? (
+              <Letter key={`intro-${index}`} space letter={i} />
+            ) : (
+              <Letter key={`intro-${index}`} letter={i} />
+            )
+          )}
+        <span
+          className={`blinking-cursor ${completedTxtRender ? '' : 'hidden'}`}
+        >
+          |
+        </span>
       </h2>
       <div
         aria-hidden
         className={`${
           jetBrainsMonoFont.className
         } max-w-none text-base sm:max-w-[70vw] sm:text-xl ${
-          isBioText && 'hidden'
+          completedTerminalRender ? '' : 'pointer-events-none select-none'
         }`}
       >
         <div className='flex items-center'>
-          <div className='rounded-l bg-green-600 px-2 text-black'>
-            /home/portfolio
+          <div className='rounded-l bg-teal-700 px-2 text-black'>
+            ~/portfolio
           </div>
-          <div className='border-[12px] border-r-0 border-b-transparent border-l-green-600 border-t-transparent sm:border-[14px] sm:border-r-0'></div>
+          <div className='border-[12px] border-r-0 border-b-transparent border-l-teal-700 border-t-transparent sm:border-[14px] sm:border-r-0'></div>
           <div>&nbsp;cat bio.txt</div>
+          <div
+            className={`ml-1 w-2 bg-white bg-opacity-80 ${
+              completedTerminalRender ? 'hidden' : ''
+            }`}
+          >
+            |
+          </div>
         </div>
-        <div className='my-0.5'>
+        <div
+          className={`my-0.5 ${
+            completedTerminalRender ? '' : 'text-transparent'
+          }`}
+        >
           I&apos;m Abil Savio, a Full Stack Web & Blockchain Developer from
           Kerala, India.
           <br />I specialize in crafting seamless digital experiences.
@@ -85,14 +158,36 @@ const Bio: FC = () => {
           and opportunities.
         </div>
         <div className='flex items-center'>
-          <div className='rounded-l bg-green-600 px-2 text-black'>
-            /home/portfolio
+          <div
+            className={`rounded-l px-2 text-black ${
+              completedTerminalRender ? 'bg-teal-700' : 'bg-black'
+            }`}
+          >
+            ~/portfolio
           </div>
-          <div className='border-[12px] border-r-0 border-b-transparent border-l-green-600 border-t-transparent sm:border-[14px] sm:border-r-0'></div>
-          <div className='ml-1 w-2 bg-white bg-opacity-80'>|</div>
+          <div
+            className={`border-[12px] border-r-0 border-b-transparent border-t-transparent sm:border-[14px] sm:border-r-0 ${
+              completedTerminalRender ? 'border-l-teal-700' : 'border-l-black'
+            }`}
+          ></div>
+          <div
+            className={`ml-1 w-2 bg-white bg-opacity-80 ${
+              completedTerminalRender ? '' : 'hidden'
+            }`}
+          >
+            |
+          </div>
         </div>
       </div>
     </div>
+  );
+};
+
+const Letter: FC<{ space?: boolean; letter: string }> = ({ space, letter }) => {
+  return space ? (
+    <span> </span>
+  ) : (
+    <span className='bio-text text-transparent'>{letter}</span>
   );
 };
 
