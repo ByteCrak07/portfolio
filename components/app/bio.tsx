@@ -107,7 +107,9 @@ const Bio: FC = () => {
             )
           )}
         <br />
-        {`I also seek inspiration and new experiences by traveling and discovering the world around me. With a programmer's mindset, I continuously strive to learn and adapt, always seeking new challenges and opportunities.`
+        {`Also, I seek inspiration and new experiences by traveling and
+          discovering the world. I'm a self taught developer and currently learning Rust.
+          Currently, I'm a senior pursuing a Bachelor's Degree in Computer Science.`
           .split('')
           .map((i, index) =>
             i == ' ' ? (
@@ -152,10 +154,11 @@ const Bio: FC = () => {
           I&apos;m Abil Savio, a Full Stack Web & Blockchain Developer from
           Kerala, India.
           <br />I specialize in crafting seamless digital experiences.
-          <br />I also seek inspiration and new experiences by traveling and
-          discovering the world around me. With a programmer&apos;s mindset, I
-          continuously strive to learn and adapt, always seeking new challenges
-          and opportunities.
+          <br />
+          Also, I seek inspiration and new experiences by traveling and
+          discovering the world. I&apos;m a self taught developer and currently
+          learning Rust. Currently, I&apos;m a senior pursuing a Bachelor&apos;s
+          Degree in Computer Science.
         </div>
         <div className='flex items-center'>
           <div
