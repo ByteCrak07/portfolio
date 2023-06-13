@@ -27,7 +27,7 @@ const AvatarImage = React.forwardRef<
 >(({ className, src, alt, ...props }, ref) => (
   <Image
     ref={ref}
-    className={cn('aspect-square h-full w-full', className)}
+    className={cn('absolute aspect-square h-full w-full', className)}
     src={src}
     alt={alt}
     {...props}
