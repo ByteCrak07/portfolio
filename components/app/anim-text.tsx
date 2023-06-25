@@ -1,26 +1,17 @@
 'use client';
 
 import { gsap } from 'gsap';
-import { CSSProperties, FC, useEffect, useRef, useState } from 'react';
-
-const style: {
-  words: CSSProperties;
-} = {
-  words: {
-    display: 'flex',
-    flexDirection: 'row',
-    overflow: 'hidden',
-  },
-};
+import { FC, useEffect, useRef, useState } from 'react';
 
 // exposing setIsVowel function from AnimIntroText component
-let setIsVowel = (isVowel: boolean) => {};
+let setIsVowel: (isVowel: boolean) => void;
 
 const AnimText: FC = () => {
   const [init, setInit] = useState(true);
   const [textIndex, setTextIndex] = useState(0);
+  const [isTransparent, setIsTransparent] = useState(true);
   const texts = [
-    'Developer',
+    'Software Developer',
     'Freelancer',
     'Creator',
     'Learner',
@@ -64,7 +55,7 @@ const AnimText: FC = () => {
         stagger: {
           each: 0.1,
         },
-        delay: init ? 1 : -0.2,
+        delay: init ? 2.5 : -0.2,
       });
       textAnimation.to(
         '.anim-text',
@@ -83,10 +74,18 @@ const AnimText: FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [textIndex, init]);
 
+  // remove transparent text before animation
+  useEffect(() => {
+    if (isTransparent) {
+      setIsTransparent(false);
+    }
+  }, [isTransparent]);
+
   return (
     <>
       <div
-        style={{ ...style.words, color: colors[textIndex] }}
+        style={{ color: isTransparent ? 'transparent' : colors[textIndex] }}
+        className='flex overflow-hidden font-bold'
         ref={textRef}
         key={texts[textIndex]}
       >
@@ -105,13 +104,36 @@ const AnimText: FC = () => {
 };
 
 const AnimIntroText: FC = () => {
-  const [text, setText] = useState(`Hey I'm a`);
-  const textRef = useRef<HTMLDivElement>(null);
+  const text1 = `Hey, Abil here`;
+  const [text2, setText2] = useState(`I'm a`);
+  const textRef1 = useRef<HTMLDivElement>(null);
+  const textRef2 = useRef<HTMLDivElement>(null);
 
   setIsVowel = (isVowel: boolean) => {
-    if (isVowel) setText(`Hey I'm an`);
-    else setText(`Hey I'm a`);
+    if (isVowel) setText2(`I'm an`);
+    else setText2(`I'm a`);
   };
+
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      let textAnimation = gsap.timeline({
+        onComplete: () => {
+          const wavingHand = document.getElementById(
+            'waving-hand'
+          ) as HTMLElement;
+          if (wavingHand) wavingHand.classList.add('wave');
+        },
+      });
+      textAnimation.from('.anim-text', {
+        y: 100,
+        stagger: {
+          each: 0.1,
+        },
+      });
+    }, textRef1);
+
+    return () => ctx.revert();
+  }, []);
 
   useEffect(() => {
     let ctx = gsap.context(() => {
@@ -121,16 +143,26 @@ const AnimIntroText: FC = () => {
         stagger: {
           each: 0.1,
         },
+        delay: 1.8,
       });
-    }, textRef);
+    }, textRef2);
 
     return () => ctx.revert();
   }, []);
 
+  // remove transparent text before animation
+  useEffect(() => {
+    textRef1.current?.classList.remove('text-transparent');
+    textRef2.current?.classList.remove('text-transparent');
+  }, []);
+
   return (
     <>
-      <div style={style.words} ref={textRef}>
-        {text
+      <div
+        className='flex justify-center overflow-hidden font-bold text-transparent sm:justify-normal'
+        ref={textRef1}
+      >
+        {text1
           .split('')
           .map((i, index) =>
             i == ' ' ? (
@@ -139,6 +171,26 @@ const AnimIntroText: FC = () => {
               <Letter key={`intro-${index}`} letter={i} />
             )
           )}
+        &nbsp;&nbsp;
+        <span id='waving-hand' className='anim-text text-xl sm:text-2xl'>
+          👋
+        </span>
+      </div>
+
+      <div
+        className='flex justify-center overflow-hidden font-bold text-transparent sm:justify-normal'
+        ref={textRef2}
+      >
+        {text2
+          .split('')
+          .map((i, index) =>
+            i == ' ' ? (
+              <Letter key={`intro-${index}`} space letter={i} />
+            ) : (
+              <Letter key={`intro-${index}`} letter={i} />
+            )
+          )}
+        &nbsp;&nbsp;&nbsp;&nbsp; <AnimText />
       </div>
     </>
   );
@@ -146,12 +198,10 @@ const AnimIntroText: FC = () => {
 
 const Letter: FC<{ space?: boolean; letter: string }> = ({ space, letter }) => {
   return space ? (
-    <span className='anim-text text-xl font-bold sm:text-2xl'>
-      &nbsp;&nbsp;
-    </span>
+    <span className='anim-text text-xl sm:text-2xl'>&nbsp;&nbsp;</span>
   ) : (
-    <span className='anim-text text-2xl font-bold sm:text-4xl'>{letter}</span>
+    <span className='anim-text text-2xl sm:text-4xl'>{letter}</span>
   );
 };
 
-export { AnimText, AnimIntroText };
+export default AnimIntroText;

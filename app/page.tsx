@@ -1,12 +1,5 @@
 import Image from 'next/image';
-import {
-  AnimIntroText,
-  AnimText,
-  AllSkills,
-  Bio,
-  TopSkills,
-  SocialLinks,
-} from '@/components/app';
+import { AnimIntroText, Bio, Skills, SocialLinks } from '@/components/app';
 
 export default function Home() {
   return (
@@ -14,9 +7,8 @@ export default function Home() {
       <section className='glass-effect m-3 flex flex-col rounded-xl px-6 py-5 sm:mx-10 sm:my-5 sm:px-32 sm:py-20'>
         <div className='flex flex-col-reverse items-center gap-x-28 gap-y-5 lg:flex-row'>
           <div className='flex flex-col justify-center'>
-            <h1 className='flex justify-center sm:justify-normal'>
-              <AnimIntroText /> &nbsp;&nbsp;&nbsp;
-              <AnimText />
+            <h1 className='sm:justify-normal'>
+              <AnimIntroText />
             </h1>
             <Bio />
           </div>
@@ -32,7 +24,7 @@ export default function Home() {
         </div>
 
         <div className='mt-20'>
-          <AllSkills />
+          <Skills />
         </div>
 
         <div className='mt-20'>
