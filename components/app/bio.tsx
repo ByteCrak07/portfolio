@@ -43,7 +43,7 @@ const Bio: FC = () => {
     <div
       className={`${inconsolataFont.className} relative mt-3 overflow-hidden rounded-xl bg-black p-5 pt-14 sm:mt-5 sm:p-10 sm:pt-14`}
     >
-      <div className='absolute left-0 top-0 flex gap-x-0.5' aria-hidden>
+      <noindex className='absolute left-0 top-0 flex gap-x-0.5' aria-hidden>
         <button
           className={`flex items-center px-3 py-2 text-sm focus:outline-none ${
             isBioText ? 'bg-gray-700' : 'bg-gray-900'
@@ -65,7 +65,7 @@ const Bio: FC = () => {
           <Terminal size={14} />
           &nbsp;Terminal
         </button>
-      </div>
+      </noindex>
       <h2
         className={`absolute inset-0 top-10 max-w-none p-5 pt-2 text-lg sm:p-10 sm:pt-5 sm:text-2xl ${
           isBioText ? 'bg-black' : 'hidden'
@@ -109,7 +109,32 @@ const Bio: FC = () => {
         <br />
         {`Also, I seek inspiration and new experiences by traveling and
           discovering the world. I'm a self taught developer and currently learning Rust.
-          Currently, I'm a senior pursuing a Bachelor's Degree in Computer Science.`
+          Currently, I'm a senior pursuing a Bachelor's Degree in Computer Science and working at `
+          .split('')
+          .map((i, index) =>
+            i == ' ' ? (
+              <Letter key={`intro-${index}`} space letter={i} />
+            ) : (
+              <Letter key={`intro-${index}`} letter={i} />
+            )
+          )}
+        <a
+          className={completedTxtRender ? 'hover:underline' : ''}
+          target='_blank'
+          href='https://www.buildbear.io'
+          rel='noopener noreferrer'
+        >
+          {`BuildBear`
+            .split('')
+            .map((i, index) =>
+              i == ' ' ? (
+                <Letter key={`intro-${index}`} space letter={i} />
+              ) : (
+                <Letter key={`intro-${index}`} letter={i} />
+              )
+            )}
+        </a>
+        {` as a Full Stack Intern.`
           .split('')
           .map((i, index) =>
             i == ' ' ? (
@@ -158,7 +183,8 @@ const Bio: FC = () => {
           Also, I seek inspiration and new experiences by traveling and
           discovering the world. I&apos;m a self taught developer and currently
           learning Rust. Currently, I&apos;m a senior pursuing a Bachelor&apos;s
-          Degree in Computer Science.
+          Degree in Computer Science and working at BuildBear as a Full Stack
+          Intern.
         </div>
         <div className='flex items-center'>
           <div

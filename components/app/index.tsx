@@ -1,6 +1,6 @@
-import { AnimIntroText, AnimText } from './anim-text';
+import AnimIntroText from './anim-text';
 import Bio from './bio';
-import { AllSkills, TopSkills } from './skills';
+import Skills from './skills';
 import SocialLinks from './social-links';
 
-export { AnimIntroText, AnimText, Bio, AllSkills, TopSkills, SocialLinks };
+export { AnimIntroText, Bio, Skills, SocialLinks };
