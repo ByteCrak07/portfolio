@@ -1,7 +1,7 @@
 import { WebPage, Person, WithContext } from 'schema-dts';
 
 const description = `Hey I'm Abil Savio, a Full Stack Web & Blockchain Developer from Kerala, India. Browse my portfolio, explore projects, read through the blog posts and tutorials.`;
-const url = 'https://abilsavio.me';
+const url = 'https://abilsavio.tech';
 
 export const jsonLdWebPage: WithContext<WebPage> = {
   '@context': 'https://schema.org',
