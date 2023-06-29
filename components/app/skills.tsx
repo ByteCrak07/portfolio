@@ -60,9 +60,9 @@ const TopSkills: FC = () => {
     <>
       <h3 className='mb-4 flex items-center gap-x-5 text-2xl font-bold sm:text-4xl'>
         Top Skills
-        <noindex className='flex items-center'>
+        <div className='flex items-center'>
           <AllSkillsWrapper />
-        </noindex>
+        </div>
       </h3>
       <div
         className={`${jostFont.className} mb-8 flex flex-wrap justify-center gap-x-5 gap-y-8 sm:justify-normal`}

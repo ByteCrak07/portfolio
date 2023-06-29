@@ -41,9 +41,9 @@ const Bio: FC = () => {
 
   return (
     <div
-      className={`${inconsolataFont.className} relative mt-3 overflow-hidden rounded-xl bg-black p-5 pt-14 sm:mt-5 sm:p-10 sm:pt-14`}
+      className={`${inconsolataFont.className} relative mx-auto mt-14 max-w-6xl overflow-hidden rounded-xl bg-black p-5 pt-14 sm:mt-20 sm:p-10 sm:pt-14`}
     >
-      <noindex className='absolute left-0 top-0 flex gap-x-0.5' aria-hidden>
+      <div className='absolute left-0 top-0 flex gap-x-0.5'>
         <button
           className={`flex items-center px-3 py-2 text-sm focus:outline-none ${
             isBioText ? 'bg-gray-700' : 'bg-gray-900'
@@ -65,7 +65,7 @@ const Bio: FC = () => {
           <Terminal size={14} />
           &nbsp;Terminal
         </button>
-      </noindex>
+      </div>
       <h2
         className={`absolute inset-0 top-10 max-w-none p-5 pt-2 text-lg sm:p-10 sm:pt-5 sm:text-2xl ${
           isBioText ? 'bg-black' : 'hidden'

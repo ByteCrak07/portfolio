@@ -11,7 +11,7 @@ const AnimText: FC = () => {
   const [textIndex, setTextIndex] = useState(0);
   const [isTransparent, setIsTransparent] = useState(true);
   const texts = [
-    'Software Developer',
+    'Developer',
     'Freelancer',
     'Creator',
     'Learner',
@@ -159,7 +159,7 @@ const AnimIntroText: FC = () => {
   return (
     <>
       <div
-        className='flex justify-center overflow-hidden font-bold text-transparent sm:justify-normal'
+        className='flex justify-center overflow-hidden py-0 font-bold text-transparent sm:justify-normal sm:py-2'
         ref={textRef1}
       >
         {text1
@@ -172,13 +172,11 @@ const AnimIntroText: FC = () => {
             )
           )}
         &nbsp;&nbsp;
-        <span id='waving-hand' className='anim-text text-xl sm:text-2xl'>
-          👋
-        </span>
+        <Letter letter='👋' id='waving-hand' />
       </div>
 
       <div
-        className='flex justify-center overflow-hidden font-bold text-transparent sm:justify-normal'
+        className='flex justify-center overflow-hidden py-0 font-bold text-transparent sm:justify-normal sm:py-2'
         ref={textRef2}
       >
         {text2
@@ -196,11 +194,17 @@ const AnimIntroText: FC = () => {
   );
 };
 
-const Letter: FC<{ space?: boolean; letter: string }> = ({ space, letter }) => {
+const Letter: FC<{ letter: string; space?: boolean; id?: string }> = ({
+  letter,
+  space,
+  id,
+}) => {
   return space ? (
-    <span className='anim-text text-xl sm:text-2xl'>&nbsp;&nbsp;</span>
+    <span className='anim-text text-xl sm:text-4xl'>&nbsp;&nbsp;</span>
   ) : (
-    <span className='anim-text text-2xl sm:text-4xl'>{letter}</span>
+    <span className='anim-text text-3xl sm:text-5xl' id={id}>
+      {letter}
+    </span>
   );
 };
 

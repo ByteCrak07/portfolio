@@ -22,6 +22,7 @@ import {
 } from '@/components/ui/dialog';
 import AnimBorder from '@/components/ui/anim-border';
 import { Button } from '@/components/ui/button';
+import { gitHub } from '@/components/ui/icons';
 import { cn } from '@/lib/utils';
 
 const Header: FC = () => {
@@ -68,7 +69,6 @@ const Header: FC = () => {
               </Avatar>
             </Link>
           </AnimBorder>
-
           <NavigationMenu>
             <NavigationMenuList className='hidden sm:flex'>
               {menus.map((menu, i) => (
@@ -87,6 +87,17 @@ const Header: FC = () => {
               ))}
             </NavigationMenuList>
           </NavigationMenu>
+
+          {/* github for portfolio */}
+          <a
+            className='mr-4 hidden w-11 sm:block'
+            href='https://github.com/ByteCrak07/portfolio'
+            target='_blank'
+            rel='noopener noreferrer'
+            aria-label={`Portfolio Github`}
+          >
+            {gitHub}
+          </a>
 
           {/* resume */}
           <Dialog>
