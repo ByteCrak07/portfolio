@@ -58,7 +58,7 @@ const jostFont = Jost({
 const TopSkills: FC = () => {
   return (
     <>
-      <h3 className='mb-4 flex items-center gap-x-5 text-2xl font-bold sm:text-4xl'>
+      <h3 className='mb-4 flex items-center gap-x-5 text-3xl font-bold sm:text-4xl'>
         Top Skills
         <div className='flex items-center'>
           <AllSkillsWrapper />

@@ -4,8 +4,8 @@ import { SocialIcon } from 'react-social-icons';
 const SocialLinks: FC = () => {
   return (
     <div>
-      <h3 className='text-2xl font-bold sm:text-4xl'>My Socials</h3>
-      <div className='mt-10 flex gap-x-4'>
+      <h3 className='text-3xl font-bold sm:text-4xl'>My Socials</h3>
+      <div className='mt-5 flex justify-center gap-x-4 sm:mt-10 sm:justify-normal'>
         <div className='glow-box-sm glow-box-sm-hover rounded-full'>
           <SocialIcon
             url='https://github.com/ByteCrak07'

@@ -11,7 +11,7 @@ import {
 export default function Home() {
   return (
     <main className='flex flex-grow flex-col'>
-      <section className='glass-effect glow-box-sm m-3 flex flex-col rounded-xl px-6 py-5 sm:mx-16 sm:mb-10 sm:mt-5 sm:px-32 sm:py-20'>
+      <section className='glass-effect glow-box-sm m-3 flex flex-col rounded-xl px-6 py-10 sm:mx-16 sm:mb-10 sm:mt-5 sm:px-32 sm:py-20'>
         <div className='flex flex-col items-center justify-center gap-x-28 gap-y-5 lg:flex-row'>
           <div className='flex-[7]'>
             <div className='m-5 ml-auto max-w-[180px] sm:max-w-[300px]'>
@@ -44,7 +44,7 @@ export default function Home() {
 
       <section
         id='projects'
-        className='glass-effect glow-box-sm m-3 flex flex-col rounded-xl px-6 py-5 sm:mx-16 sm:my-10 sm:px-32 sm:py-20'
+        className='glass-effect glow-box-sm m-3 flex flex-col rounded-xl px-6 py-10 sm:mx-16 sm:my-10 sm:px-32 sm:py-20'
       >
         <h2 className='text-3xl font-bold sm:text-4xl'>Projects</h2>
         <p className='mt-2 text-lg'>
@@ -56,7 +56,7 @@ export default function Home() {
 
       <section
         id='experience'
-        className='glass-effect glow-box-sm m-3 flex flex-col rounded-xl px-6 py-5 sm:mx-16 sm:my-10 sm:px-32 sm:py-20'
+        className='glass-effect glow-box-sm m-3 flex flex-col rounded-xl px-6 py-10 sm:mx-16 sm:my-10 sm:px-32 sm:py-20'
       >
         <h2 className='text-3xl font-bold sm:text-4xl'>Experience</h2>
         <Experience />

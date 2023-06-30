@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 const Experience: FC = () => {
   return (
-    <div className='ml-2 mt-16 sm:ml-20'>
+    <div className='ml-2 mt-10 sm:ml-20 sm:mt-16'>
       <ol className='border-glow relative border-l-2'>
         <li className='mb-10 ml-4'>
           <div className='bg-glow absolute -left-[7px] mt-1.5 h-3 w-3 rounded-full border border-slate-800'></div>
@@ -31,7 +31,8 @@ const Experience: FC = () => {
             by forking from a diverse range of Ethereum-compatible chains.
             Explore and debug transactions effortlessly using their built-in
             explorer and transaction tracer. Mint popular ERC20 tokens with
-            their user-friendly faucet.
+            their user-friendly faucet. Buildbear is primarly a blockchain
+            infrastructure company.
           </p>
           <ul className='ml-6 text-slate-400'>
             <li className='my-2 list-disc'>
@@ -39,6 +40,13 @@ const Experience: FC = () => {
             </li>
             <li className='my-2 list-disc'>
               Worked with Express, TypeScript, Docker, Kubernetes & Next.JS.
+            </li>
+            <li className='my-2 list-disc'>
+              Understood deeply the working of blockchain and smart contracts.
+            </li>
+            <li className='my-2 list-disc'>
+              Learned a lot about container management, deployment and
+              automation.
             </li>
             <li className='my-2 list-disc'>
               Website:{' '}
@@ -136,20 +144,30 @@ const Experience: FC = () => {
           <h3 className='text-2xl font-semibold text-white'>IEEE Webmaster</h3>
           <h4 className='text-lg text-slate-200'>@ IEEE GEC Thrissur</h4>
           <p className='my-4 text-justify text-base text-slate-400'>
-            Served as webmaster for IEEE GEC Thrissur for the year 2021. Built
-            their website with my team from scratch using GatsbyJS. Setup Github
-            Actions for automated builds and deployments of the website to the
-            college FTP server. Today the website is maintained by my juniors in
-            college. Website:{' '}
-            <a
-              href='https://ieee.gectcr.ac.in'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='underline hover:text-white'
-            >
-              ieee.gectcr.ac.in
-            </a>
+            Served as webmaster for IEEE GEC Thrissur for the year 2021. I was
+            among a team of 3 webmasters. Today the website is maintained by my
+            juniors in college.
           </p>
+          <ul className='ml-6 text-slate-400'>
+            <li className='my-2 list-disc'>
+              Built their website with my team from scratch using GatsbyJS.
+            </li>
+            <li className='my-2 list-disc'>
+              Setup Github Actions for automated builds and deployments of the
+              website to the college FTP server.
+            </li>
+            <li className='my-2 list-disc'>
+              Website:{' '}
+              <a
+                href='https://ieee.gectcr.ac.in'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='underline hover:text-white'
+              >
+                ieee.gectcr.ac.in
+              </a>
+            </li>
+          </ul>
         </li>
       </ol>
     </div>
