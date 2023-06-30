@@ -2,6 +2,7 @@ import Image from 'next/image';
 import {
   AnimIntroText,
   Bio,
+  Experience,
   Projects,
   Skills,
   SocialLinks,
@@ -45,12 +46,20 @@ export default function Home() {
         id='projects'
         className='glass-effect glow-box-sm m-3 flex flex-col rounded-xl px-6 py-5 sm:mx-16 sm:my-10 sm:px-32 sm:py-20'
       >
-        <h2 className='text-2xl font-bold sm:text-4xl'>Projects</h2>
+        <h2 className='text-3xl font-bold sm:text-4xl'>Projects</h2>
         <p className='mt-2 text-lg'>
           Here are some of the projects I&apos;ve built during my entire career
           as a developer.
         </p>
         <Projects />
+      </section>
+
+      <section
+        id='experience'
+        className='glass-effect glow-box-sm m-3 flex flex-col rounded-xl px-6 py-5 sm:mx-16 sm:my-10 sm:px-32 sm:py-20'
+      >
+        <h2 className='text-3xl font-bold sm:text-4xl'>Experience</h2>
+        <Experience />
       </section>
     </main>
   );

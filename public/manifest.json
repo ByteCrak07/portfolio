@@ -1,6 +1,8 @@
 {
   "name": "Abil Savio Portfolio",
   "short_name": "Abil Savio",
+  "description": "Hey I'm Abil Savio, a Full Stack Web & Blockchain Developer from Kerala, India. Browse my portfolio, explore projects, read through the blog posts and tutorials.",
+  "start_url": "/",
   "icons": [
     {
       "src": "/icons/android-chrome-192x192.png",

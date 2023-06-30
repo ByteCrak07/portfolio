@@ -95,7 +95,7 @@
 ::-webkit-scrollbar-thumb {
   cursor: pointer;
   border-radius: 10px;
-  background-color: rgb(229, 231, 235);
+  background-color: var(--glow-shadow-color);
 }
 
 .glass-effect {
@@ -126,6 +126,21 @@
   50% {
     color: white;
   }
+}
+
+.border-glow {
+  border-color: var(--glow-shadow-color);
+  transition: border-color 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bg-glow {
+  background-color: var(--glow-shadow-color);
+  transition: background-color 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.text-glow {
+  color: var(--glow-shadow-color);
+  transition: color 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glow-box {
