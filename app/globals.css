@@ -98,6 +98,11 @@
   background-color: var(--glow-shadow-color);
 }
 
+html {
+  scroll-padding-top: 140px;
+  scroll-behavior: smooth !important;
+}
+
 .glass-effect {
   background-color: rgba(40, 40, 40, 0.9);
 }
