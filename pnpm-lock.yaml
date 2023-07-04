@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@hotjar/browser':
+    specifier: ^1.0.9
+    version: 1.0.9
   '@next/env':
     specifier: ^13.4.4
     version: 13.4.4
@@ -179,6 +182,10 @@ packages:
   /@eslint/js@8.42.0:
     resolution: {integrity: sha512-6SWlXpWU5AvId8Ac7zjzmIOqMOba/JWY8XZ4A7q7Gn1Vlfg/SFFIlrtHXt9nPn4op9ZPAkl91Jao+QQv3r/ukw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    dev: false
+
+  /@hotjar/browser@1.0.9:
+    resolution: {integrity: sha512-n9akDMod8BLGpYEQCrHwlYWWd63c1HlhUSXNIDfClZtKYXbUjIUOFlNZNNcUxgHTCsi4l2i+SWKsGsO0t93S8w==}
     dev: false
 
   /@humanwhocodes/config-array@0.11.10:

@@ -3,7 +3,6 @@
 import { FC } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { event as gaEvent } from 'nextjs-google-analytics';
 import { DownloadIcon } from 'lucide-react';
 import { PacmanLoader } from 'react-spinners';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -25,6 +24,7 @@ import AnimBorder from '@/components/ui/anim-border';
 import { Button } from '@/components/ui/button';
 import { gitHub } from '@/components/ui/icons';
 import { cn } from '@/lib/utils';
+import { analyticsEvent } from './analytics';
 
 const Header: FC = () => {
   const menus = [
@@ -94,7 +94,7 @@ const Header: FC = () => {
             <DialogTrigger
               className='relative outline-none'
               onClick={() => {
-                gaEvent('open_resume_modal', {
+                analyticsEvent('open_resume_modal', {
                   category: 'Resume',
                 });
               }}
@@ -122,7 +122,7 @@ const Header: FC = () => {
                   href='https://drive.google.com/uc?export=download&id=106k85SZrdnckTypWfRPZUEMr5agtEyGC'
                   download='Resume-AbilSavio'
                   onClick={() => {
-                    gaEvent('download_resume', {
+                    analyticsEvent('download_resume', {
                       category: 'Resume',
                     });
                   }}

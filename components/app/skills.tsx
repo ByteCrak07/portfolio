@@ -1,4 +1,6 @@
-import { FC, JSX } from 'react';
+'use client';
+
+import { FC, JSX, use } from 'react';
 import { Jost } from 'next/font/google';
 import {
   Dialog,
@@ -48,6 +50,7 @@ import {
   tailwindcss,
   typeScript,
 } from '@/components/ui/icons';
+import { analyticsEvent } from './analytics';
 
 const jostFont = Jost({
   subsets: ['latin'],
@@ -142,7 +145,14 @@ const AllSkillsWrapper: FC = () => {
   return (
     <>
       <Dialog>
-        <DialogTrigger className='outline-none'>
+        <DialogTrigger
+          className='outline-none'
+          onClick={() => {
+            analyticsEvent('open_skills_modal', {
+              category: 'Skills',
+            });
+          }}
+        >
           <AnimBorder rounded>
             <span className='glass-effect flex items-center rounded-full px-3 py-2 text-base hover:bg-white hover:bg-opacity-10'>
               All skills
