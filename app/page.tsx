@@ -21,6 +21,8 @@ export default function Home() {
                 height={400}
                 width={400}
                 className='glow-box overflow-hidden rounded-3xl'
+                placeholder='blur'
+                blurDataURL='data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAKAAoDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAABAUGB//EACMQAAIBAwMEAwAAAAAAAAAAAAECAwAEIQUREgYTYZEHFXH/xAAVAQEBAAAAAAAAAAAAAAAAAAAEBf/EABoRAAICAwAAAAAAAAAAAAAAAAEDAAIEESH/2gAMAwEAAhEDEQA/AMxttAh1HSppIJXe6S44t2wGVU44P4TgHz4olPj7V3jVxCdmAIxTHoQD6a4O2TPn0Kru44xzb3RHsvQ8MoYylsB2J//Z'
               />
             </div>
           </div>

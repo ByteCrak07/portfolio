@@ -1,9 +1,7 @@
 import './globals.css';
 import { Bitter } from 'next/font/google';
-import { Analytics } from '@vercel/analytics/react';
 import { appMetadata, jsonLdWebPage, jsonLdPerson } from '@/seo';
-import ConsoleTxt from '@/components/app/console-txt';
-import Header from '@/components/app/header';
+import { Analytics, ConsoleTxt, Header } from '@/components/app';
 
 const bitterFont = Bitter({ subsets: ['latin'] });
 

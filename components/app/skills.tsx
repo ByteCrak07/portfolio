@@ -3,7 +3,7 @@ import { Jost } from 'next/font/google';
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
+  DialogFooter,
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
@@ -153,9 +153,9 @@ const AllSkillsWrapper: FC = () => {
           <DialogTitle className='flex h-10 items-center text-3xl'>
             All Skills
           </DialogTitle>
-          <DialogDescription className='h-full overflow-auto px-1 text-gray-200'>
+          <DialogFooter className='block h-full overflow-auto px-1 text-gray-200'>
             <AllSkills />
-          </DialogDescription>
+          </DialogFooter>
         </DialogContent>
       </Dialog>
     </>

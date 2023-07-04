@@ -3,6 +3,7 @@
 import { FC } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { event as gaEvent } from 'nextjs-google-analytics';
 import { DownloadIcon } from 'lucide-react';
 import { PacmanLoader } from 'react-spinners';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -16,7 +17,7 @@ import {
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
+  DialogFooter,
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
@@ -90,7 +91,14 @@ const Header: FC = () => {
 
           {/* resume */}
           <Dialog>
-            <DialogTrigger className='relative outline-none'>
+            <DialogTrigger
+              className='relative outline-none'
+              onClick={() => {
+                gaEvent('open_resume_modal', {
+                  category: 'Resume',
+                });
+              }}
+            >
               {/* github for portfolio placed absolute */}
               <a
                 className='absolute -left-14 z-10 mr-4 hidden w-11 sm:block'
@@ -113,6 +121,11 @@ const Header: FC = () => {
                 <a
                   href='https://drive.google.com/uc?export=download&id=106k85SZrdnckTypWfRPZUEMr5agtEyGC'
                   download='Resume-AbilSavio'
+                  onClick={() => {
+                    gaEvent('download_resume', {
+                      category: 'Resume',
+                    });
+                  }}
                 >
                   <Button
                     variant={'outline'}
@@ -122,16 +135,16 @@ const Header: FC = () => {
                   </Button>
                 </a>
               </DialogTitle>
-              <DialogDescription className='relative w-full flex-grow overflow-hidden'>
+              <DialogFooter className='relative w-full flex-grow overflow-hidden'>
                 <iframe
                   src='https://drive.google.com/file/d/106k85SZrdnckTypWfRPZUEMr5agtEyGC/preview'
                   allow='autoplay'
                   className='absolute inset-0 z-10 h-full w-full'
                 ></iframe>
-                <div className='flex h-full items-center justify-center'>
+                <div className='flex h-full w-full items-center justify-center'>
                   <PacmanLoader color='#fff' size={35} />
                 </div>
-              </DialogDescription>
+              </DialogFooter>
             </DialogContent>
           </Dialog>
         </header>
