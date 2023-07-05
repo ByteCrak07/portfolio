@@ -54,6 +54,7 @@ import { analyticsEvent } from './analytics';
 
 const jostFont = Jost({
   subsets: ['latin'],
+  display: 'swap',
 });
 
 // svg icons

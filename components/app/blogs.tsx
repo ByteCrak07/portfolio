@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
+import { analyticsEvent } from './analytics';
 
 type BlogData = {
   imgSrc: string;
@@ -49,6 +50,12 @@ const Blog: FC<BlogData> = ({
   date,
   timeToRead,
 }) => {
+  const onOpenBlog = () => {
+    analyticsEvent(`open_${title.toLowerCase().replace(/ /g, '-')}`, {
+      category: 'Blogs',
+    });
+  };
+
   return (
     <article className='glow-box-sm max-w-lg rounded-lg bg-slate-400 bg-opacity-10'>
       <div className='m-3 overflow-hidden rounded-xl'>
@@ -64,7 +71,12 @@ const Blog: FC<BlogData> = ({
       </div>
       <div className='p-6'>
         <h3 className='mb-2 text-2xl font-bold tracking-tight'>
-          <a href={link} target='_blank' rel='noopener noreferrer'>
+          <a
+            href={link}
+            target='_blank'
+            rel='noopener noreferrer'
+            onClick={onOpenBlog}
+          >
             {title}
           </a>
         </h3>
@@ -79,6 +91,7 @@ const Blog: FC<BlogData> = ({
             href={link}
             target='_blank'
             rel='noopener noreferrer'
+            onClick={onOpenBlog}
           >
             Read more on Medium
             <ArrowRight

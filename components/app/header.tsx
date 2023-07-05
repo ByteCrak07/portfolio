@@ -58,6 +58,7 @@ const Header: FC = () => {
                   alt='Hacker Pepe'
                   height={64}
                   width={64}
+                  loading='eager'
                 />
                 <AvatarFallback>
                   <Image
@@ -65,6 +66,7 @@ const Header: FC = () => {
                     alt='img-fallback'
                     height={64}
                     width={64}
+                    loading='eager'
                   />
                 </AvatarFallback>
               </Avatar>
@@ -89,6 +91,17 @@ const Header: FC = () => {
             </NavigationMenuList>
           </NavigationMenu>
 
+          {/* github for portfolio placed absolute */}
+          <a
+            className='absolute right-36 top-1/2 z-10 mr-1 hidden w-11 -translate-y-1/2 sm:block'
+            href='https://github.com/ByteCrak07/portfolio'
+            target='_blank'
+            rel='noopener noreferrer'
+            aria-label={`Portfolio Github`}
+          >
+            {gitHub}
+          </a>
+
           {/* resume */}
           <Dialog>
             <DialogTrigger
@@ -99,16 +112,6 @@ const Header: FC = () => {
                 });
               }}
             >
-              {/* github for portfolio placed absolute */}
-              <a
-                className='absolute -left-14 z-10 mr-4 hidden w-11 sm:block'
-                href='https://github.com/ByteCrak07/portfolio'
-                target='_blank'
-                rel='noopener noreferrer'
-                aria-label={`Portfolio Github`}
-              >
-                {gitHub}
-              </a>
               <AnimBorder rounded>
                 <span className='glass-effect flex items-center rounded-full px-3 py-2 text-lg hover:bg-white hover:bg-opacity-10'>
                   Resume

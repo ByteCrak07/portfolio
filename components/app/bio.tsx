@@ -7,10 +7,12 @@ import { analyticsEvent } from './analytics';
 
 const inconsolataFont = Inconsolata({
   subsets: ['latin'],
+  display: 'swap',
 });
 
 const jetBrainsMonoFont = JetBrains_Mono({
   subsets: ['latin'],
+  display: 'swap',
 });
 
 const Bio: FC = () => {

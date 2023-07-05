@@ -3,7 +3,7 @@ import { Bitter } from 'next/font/google';
 import { appMetadata, jsonLdWebPage, jsonLdPerson } from '@/seo';
 import { Analytics, ConsoleTxt, Header } from '@/components/app';
 
-const bitterFont = Bitter({ subsets: ['latin'] });
+const bitterFont = Bitter({ subsets: ['latin'], display: 'swap' });
 
 export const metadata = appMetadata;
 
