@@ -3,6 +3,7 @@
 import { FC, useEffect, useState } from 'react';
 import { FileText, Terminal } from 'lucide-react';
 import { Inconsolata, JetBrains_Mono } from 'next/font/google';
+import { analyticsEvent } from './analytics';
 
 const inconsolataFont = Inconsolata({
   subsets: ['latin'],
@@ -48,7 +49,10 @@ const Bio: FC = () => {
           className={`flex items-center px-3 py-2 text-sm focus:outline-none ${
             isBioText ? 'bg-gray-700' : 'bg-gray-900'
           }`}
-          onClick={() => setIsBioText(true)}
+          onClick={() => {
+            setIsBioText(true);
+            analyticsEvent('Bio.txt', { category: 'Bio' });
+          }}
         >
           <FileText size={14} />
           &nbsp;Bio.txt
@@ -60,6 +64,7 @@ const Bio: FC = () => {
           onClick={() => {
             setIsBioText(false);
             runTerminal();
+            analyticsEvent('Terminal', { category: 'Bio' });
           }}
         >
           <Terminal size={14} />

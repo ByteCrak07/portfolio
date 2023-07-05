@@ -17,7 +17,15 @@ type EventOptions = Record<string, any> & {
 const analyticsEvent = (action: string, options?: EventOptions) => {
   if (process.env.NODE_ENV === 'production') {
     event(action, options);
-    if (Hotjar.isReady()) Hotjar.event(action);
+
+    // disable web-vitals reporting for hotjar
+    const category = options?.category;
+    if (
+      (!category ||
+        !(category === 'Web Vitals' || category === 'Next.js custom metric')) &&
+      Hotjar.isReady()
+    )
+      Hotjar.event(action);
   } else {
     console.log('[Dev Analytics Event]', { action, ...options });
   }
@@ -41,7 +49,7 @@ const Analytics: FC = () => {
   return (
     <>
       {process.env.NODE_ENV === 'production' && (
-        <GoogleAnalytics trackPageViews={{ ignoreHashChange: true }} />
+        <GoogleAnalytics trackPageViews strategy='lazyOnload' />
       )}
       <VercelAnalytics />
     </>

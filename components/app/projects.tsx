@@ -14,7 +14,7 @@ import {
 } from '@/components/ui/icons';
 
 type ProjectData = {
-  src: string;
+  imgSrc: string;
   title: string;
   content: string;
   icons?: JSX.Element[];
@@ -29,7 +29,7 @@ interface ProjectProps extends ProjectData {
 const Projects: FC = () => {
   const projectsData: ProjectData[] = [
     {
-      src: '/assets/projects/synchro.rs.png',
+      imgSrc: '/assets/projects/synchro.rs.png',
       title: 'Synchro.rs',
       content:
         'A software to synchronize audio streams in devices connected to a network (LAN). This projects aims on minimal latency and proper synchronization between all the clients.',
@@ -37,7 +37,7 @@ const Projects: FC = () => {
       github: 'https://github.com/synchro-driver/synchro.rs',
     },
     {
-      src: '/assets/projects/kcart.png',
+      imgSrc: '/assets/projects/kcart.png',
       title: 'KCART',
       content:
         'A supply chain management system built using Next.js and deployed on polygon blockchain.',
@@ -46,7 +46,7 @@ const Projects: FC = () => {
       website: 'https://supply-chain-rouge.vercel.app',
     },
     {
-      src: '/assets/projects/bingewatch.png',
+      imgSrc: '/assets/projects/bingewatch.png',
       title: 'BingeWatch',
       content:
         'Watch movies together with friends and family. Built using express and socket.io.',
@@ -55,7 +55,7 @@ const Projects: FC = () => {
       website: 'https://binge-watch-hazel.vercel.app',
     },
     {
-      src: '/assets/projects/ieee.png',
+      imgSrc: '/assets/projects/ieee.png',
       title: 'IEEE Website GEC Thrissur',
       content:
         'Official Website for IEEE Student Branch GEC Thrissur. Built using GatsbyJS. Automated builds and deployments using GitHub Actions.',
@@ -64,7 +64,7 @@ const Projects: FC = () => {
       website: 'https://ieee.gectcr.ac.in',
     },
     {
-      src: '/assets/projects/agrify.png',
+      imgSrc: '/assets/projects/agrify.png',
       title: 'Agrify',
       content:
         'A project for predicting various diseases of crops by uploading images of their leaves. Built using React and Firebase and Google Teachable Machine.',
@@ -80,7 +80,7 @@ const Projects: FC = () => {
         <Project
           key={`proj${i}`}
           no={i}
-          src={data.src}
+          imgSrc={data.imgSrc}
           title={data.title}
           content={data.content}
           icons={data.icons}
@@ -94,7 +94,7 @@ const Projects: FC = () => {
 
 const Project: FC<ProjectProps> = ({
   no,
-  src,
+  imgSrc,
   title,
   content,
   icons,
@@ -110,11 +110,13 @@ const Project: FC<ProjectProps> = ({
       >
         <div className='glow-box-sm flex-1 overflow-hidden rounded-lg'>
           <Image
-            src={src}
+            src={imgSrc}
             alt={title}
-            height={600}
-            width={1200}
+            height={248}
+            width={496}
             className='object-cover'
+            placeholder='blur'
+            blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAAAAACRPiE6AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAACYktHRAD/h4/MvwAAAAd0SU1FB+cHBQUiDgSqBHQAAACmSURBVAjXNY2xDoJADIYb4dqeiwFDwOPK3UEig0QXB2dnBycSHsFFff/JA7XJ13xp/uYHYmQm1rhKiKJpJgQkJELEbByzxSLwuyXT+zUp/A5E4gOmj+v9mTLO0ZiccxF3uXWJUqiig8ZNUVTbvCxKv+8PnauQgSm3u6osjKmH8+k49A0SaNsGCcF5acU3EpzUGta1FdMEscY5Z8WLGD23k8J/3bLUB+6jD2NtFXVwAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIzLTA3LTA1VDA1OjM0OjA3KzAwOjAwTQLWCQAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMy0wNy0wNVQwNTozNDowNyswMDowMDxfbrUAAAAodEVYdGRhdGU6dGltZXN0YW1wADIwMjMtMDctMDVUMDU6MzQ6MTQrMDA6MDCWCFVpAAAAAElFTkSuQmCC'
           />
         </div>
         <div className='flex flex-1 flex-col justify-between px-4 pb-0 pt-5 leading-normal lg:px-10 lg:py-4'>
