@@ -2,6 +2,7 @@ import Image from 'next/image';
 import {
   AnimIntroText,
   Bio,
+  Blogs,
   Experience,
   Projects,
   Skills,
@@ -61,7 +62,22 @@ export default function Home() {
         className='glass-effect glow-box-sm m-3 flex flex-col rounded-xl px-6 py-10 sm:mx-16 sm:my-10 sm:px-32 sm:py-20'
       >
         <h2 className='text-3xl font-bold sm:text-4xl'>Experience</h2>
+        <p className='mt-2 text-lg'>
+          Explore my professional journey as a developer.
+        </p>
         <Experience />
+      </section>
+
+      <section
+        id='blogs'
+        className='glass-effect glow-box-sm m-3 flex flex-col rounded-xl px-6 py-10 sm:mx-16 sm:my-10 sm:px-32 sm:py-20'
+      >
+        <h2 className='text-3xl font-bold sm:text-4xl'>Blogs</h2>
+        <p className='mt-2 text-lg'>
+          Explore my blogs where I share insights, tips, and experiences from my
+          journey as a developer.
+        </p>
+        <Blogs />
       </section>
     </main>
   );

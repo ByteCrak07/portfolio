@@ -1,6 +1,7 @@
 import Analytics from './analytics';
 import AnimIntroText from './anim-text';
 import Bio from './bio';
+import Blogs from './blogs';
 import ConsoleTxt from './console-txt';
 import Experience from './experience';
 import Header from './header';
@@ -12,6 +13,7 @@ export {
   Analytics,
   AnimIntroText,
   Bio,
+  Blogs,
   ConsoleTxt,
   Experience,
   Header,
