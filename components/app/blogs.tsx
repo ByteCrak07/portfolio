@@ -1,3 +1,5 @@
+'use client';
+
 import { FC } from 'react';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
@@ -5,6 +7,7 @@ import { analyticsEvent } from './analytics';
 
 type BlogData = {
   imgSrc: string;
+  imgBlurDataURL: string;
   title: string;
   content: string;
   link: string;
@@ -16,6 +19,8 @@ const Blogs: FC = () => {
   const blogsData: BlogData[] = [
     {
       imgSrc: '/assets/blogs/blog1.png',
+      imgBlurDataURL:
+        'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQIAHAAcAAD/2wBDAAMCAgICAgMCAgIDAwMDBAYEBAQEBAgGBgUGCQgKCgkICQkKDA8MCgsOCwkJDRENDg8QEBEQCgwSExIQEw8QEBD/2wBDAQMDAwQDBAgEBAgQCwkLEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBD/wAARCAAKABQDAREAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAwYFBwj/xAApEAAABgAEBAcBAAAAAAAAAAABAgMEBREAEhMxBiFB0RQVIiVCUVRh/8QAGAEAAwEBAAAAAAAAAAAAAAAAAwQFBgH/xAAhEQABBAEDBQAAAAAAAAAAAAABAAIDEQQFEjETIVFSkf/aAAwDAQACEQMRAD8A3PFQriaWORtpAKJcwnOYAEL+r69sVpJRFVrL4+M7JsNPCOrwPMx6Cjwh3D8w8ypZ07At/G62C+u2BDJaexTR06UC2lRdl6GDDVKbaulvHsGup4Vk3RzE9WmmUt1tdBiO5znclaqONjL2ikp8HQcLFpTQRkQyZg4kVF1tBuRPUVHc5soBZv6PPHERM/kkLQe0Mtvzk7YJ1H+SlzBF6j4F/9k=',
       title: 'Pocketbase OAuth on NextJS',
       content:
         'A simple tutorial on implementing Google & GitHub OAuth in NextJS using Pocketbase — A brief introduction to Pocketbase & NextJS Most of you folks must have already heard about Pocketbase and also about...',
@@ -31,6 +36,7 @@ const Blogs: FC = () => {
         <Blog
           key={`blog${i}`}
           imgSrc={data.imgSrc}
+          imgBlurDataURL={data.imgBlurDataURL}
           title={data.title}
           content={data.content}
           link={data.link}
@@ -44,6 +50,7 @@ const Blogs: FC = () => {
 
 const Blog: FC<BlogData> = ({
   imgSrc,
+  imgBlurDataURL,
   title,
   content,
   link,
@@ -66,7 +73,7 @@ const Blog: FC<BlogData> = ({
           width={496}
           className='object-cover'
           placeholder='blur'
-          blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAAAAACRPiE6AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAACYktHRAD/h4/MvwAAAAd0SU1FB+cHBQUiDgSqBHQAAACmSURBVAjXNY2xDoJADIYb4dqeiwFDwOPK3UEig0QXB2dnBycSHsFFff/JA7XJ13xp/uYHYmQm1rhKiKJpJgQkJELEbByzxSLwuyXT+zUp/A5E4gOmj+v9mTLO0ZiccxF3uXWJUqiig8ZNUVTbvCxKv+8PnauQgSm3u6osjKmH8+k49A0SaNsGCcF5acU3EpzUGta1FdMEscY5Z8WLGD23k8J/3bLUB+6jD2NtFXVwAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIzLTA3LTA1VDA1OjM0OjA3KzAwOjAwTQLWCQAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMy0wNy0wNVQwNTozNDowNyswMDowMDxfbrUAAAAodEVYdGRhdGU6dGltZXN0YW1wADIwMjMtMDctMDVUMDU6MzQ6MTQrMDA6MDCWCFVpAAAAAElFTkSuQmCC'
+          blurDataURL={imgBlurDataURL}
         />
       </div>
       <div className='p-6'>
