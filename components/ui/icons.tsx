@@ -168,6 +168,33 @@ const gitHub = (
   </svg>
 );
 
+const gmail = (
+  <svg viewBox='0 0 128 128' className='w-full'>
+    <g>
+      <path
+        fill='#4caf50'
+        d='m126.84 40.66-14.96 8.23L96.92 63.1v48.78h20.95a8.97 8.97 0 0 0 8.98-8.98V40.66z'
+      />
+      <path
+        fill='#1e88e5'
+        d='m1.16 40.66 10.8 5.12 19.12 17.33v48.78H10.13a8.97 8.97 0 0 1-8.98-8.98V40.67z'
+      />
+      <path
+        fill='#e53935'
+        d='M96.92 25.7 64 50.38 31.08 25.7l-2.99 17.35 2.99 20.05L64 87.79 96.92 63.1l2.99-20.05z'
+      />
+      <path
+        fill='#c62828'
+        d='M1.16 28.99v11.67L31.08 63.1V25.69l-9.34-7a12.85 12.85 0 0 0-20.59 10.3z'
+      />
+      <path
+        fill='#fbc02d'
+        d='M126.84 28.99v11.67L96.92 63.1V25.69l9.34-7a12.85 12.85 0 0 1 20.59 10.3z'
+      />
+    </g>
+  </svg>
+);
+
 const go = (
   <svg viewBox='0 0 128 128' className='w-full'>
     <g fill='#00acd7' fillRule='evenodd'>
@@ -722,6 +749,24 @@ const tailwindcss = (
   </svg>
 );
 
+const telegram = (
+  <svg viewBox='0 0 128 128' className='w-full'>
+    <defs>
+      <linearGradient id='a' x1='50%' x2='50%' y1='0%' y2='99.2583%'>
+        <stop offset='0%' stopColor='#2AABEE' />
+        <stop offset='100%' stopColor='#229ED9' />
+      </linearGradient>
+    </defs>
+    <g fill='none' fillRule='evenodd'>
+      <circle cx='64' cy='64' r='63.99' fill='url(#a)' />
+      <path
+        fill='#FFF'
+        d='M28.98 63.32c18.65-8.13 31.09-13.48 37.32-16.07 17.77-7.39 21.46-8.68 23.87-8.72.53-.01 1.71.12 2.48.74.65.52.83 1.23.91 1.73.09.5.19 1.63.11 2.52-.96 10.12-5.13 34.67-7.25 46-.9 4.79-2.66 6.4-4.37 6.56-3.72.34-6.54-2.46-10.14-4.82-5.63-3.69-8.81-5.99-14.28-9.59-6.32-4.16-2.22-6.45 1.38-10.19.94-.98 17.32-15.87 17.63-17.22.04-.17.08-.8-.3-1.13-.37-.33-.93-.22-1.32-.13-.56.13-9.56 6.07-26.99 17.84-2.55 1.75-4.87 2.61-6.94 2.56-2.29-.05-6.68-1.29-9.95-2.35-4.01-1.3-7.19-1.99-6.91-4.2.14-1.15 1.73-2.33 4.76-3.54z'
+      />
+    </g>
+  </svg>
+);
+
 const typeScript = (
   <svg viewBox='0 0 128 128' className='w-full'>
     <path fill='#fff' d='M22.67 47h99.67v73.67H22.67z'></path>
@@ -749,6 +794,7 @@ export {
   gatsby,
   git,
   gitHub,
+  gmail,
   go,
   googleCloud,
   graphQL,
@@ -777,5 +823,6 @@ export {
   solidityWhite,
   svelte,
   tailwindcss,
+  telegram,
   typeScript,
 };

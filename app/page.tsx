@@ -3,6 +3,7 @@ import {
   AnimIntroText,
   Bio,
   Blogs,
+  Contact,
   Experience,
   Projects,
   Skills,
@@ -79,6 +80,18 @@ export default function Home() {
           journey as a developer.
         </p>
         <Blogs />
+      </section>
+
+      <section
+        id='contact'
+        className='glass-effect glow-box-sm m-3 flex flex-col rounded-xl px-6 py-10 sm:mx-16 sm:my-10 sm:px-32 sm:py-20'
+      >
+        <h2 className='text-3xl font-bold sm:text-4xl'>Contact</h2>
+        <p className='mt-2 text-lg'>
+          Let&apos;s Connect and Collaborate! Whether you have a project in
+          mind, or simply have a question, feel free to reach out.
+        </p>
+        <Contact />
       </section>
     </main>
   );

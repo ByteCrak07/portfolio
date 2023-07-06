@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, JSX, use } from 'react';
+import { FC, JSX } from 'react';
 import { Jost } from 'next/font/google';
 import {
   Dialog,

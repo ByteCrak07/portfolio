@@ -63,7 +63,7 @@
     --accent: 216 34% 17%;
     --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 63% 31%;
+    --destructive: 0 100% 50%;
     --destructive-foreground: 210 40% 98%;
 
     --ring: 216 34% 17%;
@@ -146,6 +146,11 @@ html {
 .text-glow {
   color: var(--glow-shadow-color);
   transition: color 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bg-glow {
+  background-color: var(--glow-shadow-color);
+  transition: background-color 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glow-box {
