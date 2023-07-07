@@ -1,5 +1,6 @@
 import './globals.css';
 import { Bitter } from 'next/font/google';
+import { Toaster } from 'sonner';
 import { appMetadata, jsonLdWebPage, jsonLdPerson } from '@/seo';
 import { Analytics, ConsoleTxt, Header } from '@/components/app';
 
@@ -50,6 +51,7 @@ export default function RootLayout({
       <body
         className={`${bitterFont.className} dark flex min-h-screen flex-col`}
       >
+        <Toaster closeButton richColors position='bottom-right' theme='dark' />
         <Header />
         {children}
         <Analytics />

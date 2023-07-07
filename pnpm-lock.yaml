@@ -110,6 +110,9 @@ dependencies:
   sharp:
     specifier: ^0.32.1
     version: 0.32.1
+  sonner:
+    specifier: ^0.1.1
+    version: 0.1.1(react@18.2.0)
   swr:
     specifier: ^2.2.0
     version: 2.2.0(react@18.2.0)
@@ -3654,6 +3657,14 @@ packages:
   /slash@4.0.0:
     resolution: {integrity: sha512-3dOsAHXXUkQTpOYcoAxLIorMTp4gIQr5IW3iVb7A7lFIp0VHhnynm9izx6TssdrIcVIESAlVjtnO2K8bg+Coew==}
     engines: {node: '>=12'}
+    dev: false
+
+  /sonner@0.1.1(react@18.2.0):
+    resolution: {integrity: sha512-ZNAqRwfoCbn72wrpyU6fzrrWPvSX7FqiI/4sGdmSBAhDOHN0YUAE/9d948eA1iFmAobGM3FjE1NnxbJ325WTXA==}
+    peerDependencies:
+      react: ^18.0.0
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /source-map-js@1.0.2:

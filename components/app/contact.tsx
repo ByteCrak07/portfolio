@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import useSWRMutation from 'swr/mutation';
+import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
 import {
   Form,
@@ -55,14 +56,14 @@ const Contact: FC = () => {
   const { trigger, isMutating } = useSWRMutation('/api/email', sendRequest);
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+    toast('Sending message...');
 
     await trigger(values)
-      .then((data) => {
-        console.log(data);
+      .then(() => {
+        toast.success("Message sent to Abil's inbox.");
       })
-      .catch((err) => {
-        console.log(err);
+      .catch(() => {
+        toast.error('Something went wrong!');
       });
   }
 
@@ -152,7 +153,7 @@ const Contact: FC = () => {
             <Button
               type='submit'
               disabled={isMutating}
-              className='flex w-40 items-center justify-around'
+              className='bg-glow flex w-40 items-center justify-around font-bold text-white'
             >
               <div>{!isMutating ? 'Send message' : 'Sending...'}</div>
               <div

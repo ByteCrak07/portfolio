@@ -20,10 +20,10 @@ const AnimText: FC = () => {
   ];
   const colors = [
     'rgba(130, 230, 188, 1)',
-    'rgba(255, 237, 255, 1)',
     'rgba(89, 188, 221, 1)',
+    'rgba(247, 96, 107, 1)',
     'rgba(255, 204, 103, 1)',
-    'rgba(252, 136, 146, 1)',
+    'rgba(238, 108, 77, 1)',
     'rgba(190, 143, 248, 1)',
   ];
   const textRef = useRef<HTMLDivElement>(null);
