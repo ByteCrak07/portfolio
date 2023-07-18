@@ -1,44 +1,49 @@
 import { type NextRequest, NextResponse } from 'next/server';
+import { type ReactElement } from 'react';
 import nodemailer from 'nodemailer';
 import Mail from 'nodemailer/lib/mailer';
+import { render } from '@react-email/render';
+import ContactEmail from '@/emails';
 
 export async function POST(request: NextRequest) {
-  const { email, fullname, message } = await request.json();
+  const { email, fullname, subject, message, copy } = await request.json();
 
   const transport = nodemailer.createTransport({
-    host: process.env.NODEMAILER_SMTP_HOST,
-    port: 465,
-    secure: true,
+    service: 'gmail',
     auth: {
       user: process.env.NODEMAILER_EMAIL,
       pass: process.env.NODEMAILER_PASSWORD,
     },
   });
 
+  const emailHtml = render(
+    ContactEmail({ email, fullname, subject, message }) as ReactElement
+  );
+
   const mailOptions: Mail.Options = {
+    from: process.env.NODEMAILER_EMAIL,
     to: process.env.MY_EMAIL,
-    subject: `Message from ${fullname} (${email}) (via abilsavio.tech)`,
-    text: message,
+    subject: subject,
+    html: emailHtml,
   };
 
-  const sendMailPromise = new Promise<boolean>((resolve) => {
-    transport.sendMail(mailOptions, function (err) {
-      if (err) {
-        resolve(false);
-      } else {
-        resolve(true);
-      }
+  if (copy) mailOptions.cc = email;
+
+  const sendMailPromise = () =>
+    new Promise<string>((resolve, reject) => {
+      transport.sendMail(mailOptions, function (err) {
+        if (!err) {
+          resolve('Email sent');
+        } else {
+          reject(err.message);
+        }
+      });
     });
-  });
 
-  const isMailSent = await sendMailPromise;
-
-  if (isMailSent) {
+  try {
+    await sendMailPromise();
     return NextResponse.json({ message: 'Email sent' });
-  } else {
-    return NextResponse.json(
-      { error: 'Internal Server Error' },
-      { status: 500 }
-    );
+  } catch (err) {
+    return NextResponse.json({ error: err }, { status: 500 });
   }
 }

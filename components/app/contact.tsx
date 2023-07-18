@@ -17,8 +17,9 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { Checkbox } from '@/components/ui/checkbox';
 import { gmail, telegram } from '@/components/ui/icons';
-import { Loader2, UploadCloud } from 'lucide-react';
+import { Loader2 } from 'lucide-react';
 
 const Contact: FC = () => {
   const formSchema = z.object({
@@ -26,9 +27,13 @@ const Contact: FC = () => {
       message: 'Provide a valid name',
     }),
     email: z.string().email('Provide a valid email'),
+    subject: z.string().min(2, {
+      message: 'Provide a valid subject',
+    }),
     message: z.string().min(10, {
       message: 'Enter atleast 10 characters',
     }),
+    copy: z.boolean(),
   });
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -36,7 +41,9 @@ const Contact: FC = () => {
     defaultValues: {
       fullname: '',
       email: '',
+      subject: '',
       message: '',
+      copy: false,
     },
   });
 
@@ -56,15 +63,11 @@ const Contact: FC = () => {
   const { trigger, isMutating } = useSWRMutation('/api/email', sendRequest);
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    toast('Sending message...');
-
-    await trigger(values)
-      .then(() => {
-        toast.success("Message sent to Abil's inbox.");
-      })
-      .catch(() => {
-        toast.error('Something went wrong!');
-      });
+    toast.promise(trigger(values), {
+      loading: 'Sending message...',
+      success: "Message sent to Abil's inbox.",
+      error: 'Something went wrong!',
+    });
   }
 
   return (
@@ -133,6 +136,24 @@ const Contact: FC = () => {
 
             <FormField
               control={form.control}
+              name='subject'
+              render={({ field }) => (
+                <FormItem className='flex-1'>
+                  <FormLabel className='font-bold'>Subject</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder='Subject for the message'
+                      className='font-semibold'
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
               name='message'
               render={({ field }) => (
                 <FormItem>
@@ -150,10 +171,28 @@ const Contact: FC = () => {
               )}
             />
 
+            <FormField
+              control={form.control}
+              name='copy'
+              render={({ field }) => (
+                <FormItem className='flex flex-row items-start space-x-3 space-y-0'>
+                  <FormControl>
+                    <Checkbox
+                      checked={field.value}
+                      onCheckedChange={field.onChange as any}
+                    />
+                  </FormControl>
+                  <div className='space-y-1 leading-none'>
+                    <FormLabel>Send me a copy of this message</FormLabel>
+                  </div>
+                </FormItem>
+              )}
+            />
+
             <Button
               type='submit'
               disabled={isMutating}
-              className='bg-glow flex w-40 items-center justify-around font-bold text-white'
+              className='bg-glow flex w-40 items-center justify-around font-bold text-white hover:bg-primary/20'
             >
               <div>{!isMutating ? 'Send message' : 'Sending...'}</div>
               <div

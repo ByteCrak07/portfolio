@@ -37,3 +37,6 @@ next-env.d.ts
 # robots and sitemap
 public/robots.txt
 public/sitemap.xml
+
+# react email
+.react-email
