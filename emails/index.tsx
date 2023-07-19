@@ -120,7 +120,7 @@ export default ContactEmail;
 const main = {
   backgroundColor: '#000',
   fontFamily: 'Georgia, serif',
-  padding: '60px',
+  padding: '60px 0',
 };
 
 const icon = {
