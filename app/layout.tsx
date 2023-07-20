@@ -2,7 +2,7 @@ import './globals.css';
 import { Bitter } from 'next/font/google';
 import { Toaster } from 'sonner';
 import { appMetadata, jsonLdWebPage, jsonLdPerson } from '@/seo';
-import { Analytics, ConsoleTxt, Header } from '@/components/app';
+import { Analytics, ConsoleTxt, Footer, Header } from '@/components/app';
 
 const bitterFont = Bitter({ subsets: ['latin'], display: 'swap' });
 
@@ -56,6 +56,7 @@ export default function RootLayout({
         {children}
         <Analytics />
         <ConsoleTxt />
+        <Footer />
       </body>
     </html>
   );

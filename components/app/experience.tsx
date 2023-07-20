@@ -15,7 +15,7 @@ const Experience: FC = () => {
           <div className='text-lg text-slate-200'>Today</div>
         </li>
 
-        <li className='mb-10 ml-4'>
+        <li id='buildbear-labs' className='mb-10 ml-4'>
           <div className='bg-glow absolute -left-[7px] mt-1.5 h-3 w-3 rounded-full border border-slate-800'></div>
           <time className='text-glow mb-1 text-sm font-normal leading-none'>
             February 2023
@@ -105,7 +105,7 @@ const Experience: FC = () => {
           </p>
         </li>
 
-        <li className='mb-10 ml-4'>
+        <li id='cryptoliterature' className='mb-10 ml-4'>
           <div className='bg-glow absolute -left-[7px] mt-1.5 h-3 w-3 rounded-full border border-slate-800'></div>
           <time className='text-glow mb-1 text-sm font-normal leading-none'>
             Jan 2022
@@ -155,7 +155,7 @@ const Experience: FC = () => {
           </ul>
         </li>
 
-        <li className='mb-10 ml-4'>
+        <li id='tatos-technologies' className='mb-10 ml-4'>
           <div className='bg-glow absolute -left-[7px] mt-1.5 h-3 w-3 rounded-full border border-slate-800'></div>
           <time className='text-glow mb-1 text-sm font-normal leading-none'>
             June 2021
@@ -223,7 +223,7 @@ const Experience: FC = () => {
           </ul>
         </li>
 
-        <li className='mb-10 ml-4'>
+        <li id='ieee-gec-thrissur' className='mb-10 ml-4'>
           <div className='bg-glow absolute -left-[7px] mt-1.5 h-3 w-3 rounded-full border border-slate-800'></div>
           <time className='text-glow mb-1 text-sm font-normal leading-none'>
             February 2021

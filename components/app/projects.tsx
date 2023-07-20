@@ -14,6 +14,7 @@ import {
 } from '@/components/ui/icons';
 
 type ProjectData = {
+  id: string;
   imgSrc: string;
   imgBlurDataURL: string;
   title: string;
@@ -30,6 +31,7 @@ interface ProjectProps extends ProjectData {
 const Projects: FC = () => {
   const projectsData: ProjectData[] = [
     {
+      id: 'synchro.rs',
       imgSrc: '/assets/projects/synchro.rs.png',
       imgBlurDataURL:
         'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgICAgMCAgIDAwMDBAYEBAQEBAgGBgUGCQgKCgkICQkKDA8MCgsOCwkJDRENDg8QEBEQCgwSExIQEw8QEBD/wAALCAAKABQBAREA/8QAGAAAAgMAAAAAAAAAAAAAAAAAAQMGBwn/xAAkEAABBAEDAwUAAAAAAAAAAAABAgMEEQAFBhIVIUExUWGT0f/aAAgBAQAAPwDMpnRdQkMB9tFJV3TYNke/pk43pD0Hc7emr2ntuFoBiNLZkAvcS+LHCx35KACrcNFRV3ArK/mQZEKQqO/RUnyLIPyD5wInTUcUomPpAFABwihh6hPAFTpH2q/cS8++6vk684s1VqUSc//Z',
@@ -40,6 +42,7 @@ const Projects: FC = () => {
       github: 'https://github.com/synchro-driver/synchro.rs',
     },
     {
+      id: 'kcart',
       imgSrc: '/assets/projects/kcart.png',
       imgBlurDataURL:
         'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQIAJQAlAAD/2wBDAAMCAgICAgMCAgIDAwMDBAYEBAQEBAgGBgUGCQgKCgkICQkKDA8MCgsOCwkJDRENDg8QEBEQCgwSExIQEw8QEBD/2wBDAQMDAwQDBAgEBAgQCwkLEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBD/wAARCAAKABQDAREAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAwYFBwj/xAAoEAACAgIAAwcFAAAAAAAAAAABAgMEBREABjEHEhMUIiRRISMyM3H/xAAXAQEBAQEAAAAAAAAAAAAAAAADAgEA/8QAHhEAAwABBAMAAAAAAAAAAAAAAAECEQMEEjEhUcH/2gAMAwEAAhEDEQA/ANK4ntssrmcfib2ZzkUNy8lVpu9KsSbYAs8h0o2ToEbHUkjXDuMkJkzzn2qc6cvYqC83J3NVVmyArSrHzHTvP4BikfxQkEzkgMiqR+X3AQCA2oieRreAVHMZC/XXI2xIli0BLMGYlixAHqJGydADZ+Bw63GtKUq3hdeWbzrrJVcqJDnoq0KKkVy57mNRpZvbSH1jo3QdfgcXppOKb9fQ67Q3YaGGKvUWOJEHmJ30qgervH6/3gGUNMH6xwbOP//Z',
@@ -51,6 +54,7 @@ const Projects: FC = () => {
       website: 'https://supply-chain-rouge.vercel.app',
     },
     {
+      id: 'bingewatch',
       imgSrc: '/assets/projects/bingewatch.png',
       imgBlurDataURL:
         'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQIAJQAlAAD/2wBDAAMCAgICAgMCAgIDAwMDBAYEBAQEBAgGBgUGCQgKCgkICQkKDA8MCgsOCwkJDRENDg8QEBEQCgwSExIQEw8QEBD/2wBDAQMDAwQDBAgEBAgQCwkLEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBD/wAARCAAKABQDAREAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABwgG/8QAJxAAAQMDBAEDBQAAAAAAAAAAAQIDBAUGEQAHITESCBRBIjJhcXL/xAAZAQACAwEAAAAAAAAAAAAAAAAEBgACAwf/xAAmEQABAgYABgMBAAAAAAAAAAABAgMABAURITESIkFRcfETUmHh/9oADAMBAAIRAxEAPwAT2Pq9r0bbizvcWPEmS343m/IlIS40+fcOcFKlYJKUkdcY5HWtWKjKIcLTuwcm+f3HiKOUuadR8zRwQbC2L2xnzDFs/wCptbEm5bNa2oo0qoQqtIcjOLjx0txYn0AMAhB8ylWT/Oe8Z0VPVeSQQpI5elz6/kYytJnCjhJHEN2HuIz3yr8yt7x3nWFwGacuZWZDy4cbAaYJP2ICeAB+NXZcS+2lwaIiKbUwotq6RvdplFNoUgJJGGygY+ElRyP0c9aQao2gzKyQNw1091YYSAo67wg1112EsKhuLYKilJLRKSQV8jj40IhCVjmF4IU4tOiYl69FqXeFaWtRUozXcknJPOugU4ASjQH1EKU6SZhZPcx//9k=',
@@ -62,6 +66,7 @@ const Projects: FC = () => {
       website: 'https://binge-watch-hazel.vercel.app',
     },
     {
+      id: 'ieee-website',
       imgSrc: '/assets/projects/ieee.png',
       imgBlurDataURL:
         'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQIAJQAlAAD/2wBDAAMCAgICAgMCAgIDAwMDBAYEBAQEBAgGBgUGCQgKCgkICQkKDA8MCgsOCwkJDRENDg8QEBEQCgwSExIQEw8QEBD/2wBDAQMDAwQDBAgEBAgQCwkLEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBD/wAARCAAKABQDAREAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAQQFBgf/xAApEAABAwIEBgEFAAAAAAAAAAABAgMRBAUABgcSEyEiMUGRFTNRYWJx/8QAGAEAAwEBAAAAAAAAAAAAAAAAAwQFAAL/xAAlEQACAgEDAwQDAAAAAAAAAAABAgMRAAQhQRIxUQUTIvAyYbH/2gAMAwEAAhEDEQA/AMFtGr+cqG51FvRmRp81SWV0Ve7SbkTILlOGR1FQCgnd25RBnCIhBhVh+VfTlSWRTqHWvgCdv1e2N02o2b7m9ervX6i/HPNu8KlZfoJQ2BKp4YPUZgEqEDaR2weKGRYwwFtXg75xq1iil9s0o25vjuDzeRFFqxdahVS9X2FmteW+pRKSG+FIB2EBMeZH4UB4xn1KRUH2NZjom62WI9QB7jnKrYW2zmezS2npW4ocuyuRn+yB6wr6aS0b34P8w3qAAkSvOMZ5QhN0rQlIEoQTA8lfP3J9nFbrYIlH7WK6sCR/nvVd8NubRw3TsT9T7fqMSyiyMxcXvzhHkeOghIFcZ//Z',
@@ -73,6 +78,7 @@ const Projects: FC = () => {
       website: 'https://ieee.gectcr.ac.in',
     },
     {
+      id: 'agrify',
       imgSrc: '/assets/projects/agrify.png',
       imgBlurDataURL:
         'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQIAJQAlAAD/2wBDAAMCAgICAgMCAgIDAwMDBAYEBAQEBAgGBgUGCQgKCgkICQkKDA8MCgsOCwkJDRENDg8QEBEQCgwSExIQEw8QEBD/2wBDAQMDAwQDBAgEBAgQCwkLEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBD/wAARCAAKABQDAREAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAQYIB//EACwQAAIBAgUCAgsAAAAAAAAAAAECAwQFAAYHESEJEhMiIzEyOEFRUmKBhrH/xAAYAQEAAwEAAAAAAAAAAAAAAAACAAMEBf/EACURAAECBAYCAwAAAAAAAAAAAAEAAgMEERIFITEyUZEiQRRhsf/aAAwDAQACEQMRAD8AaunfkbUbNWg9HessZ3obTaY8wXeCqo5KNnaVwsXY6srADYleNuQvr5xpjRZiFMMMNwDBuBaCTrofS5UXDoc017nlwcbbSHEAU3VFM6jTMUPKpa26LavqtpN71Xpapoq0vcxFRPEJ6XdPRx7P5W4kHd9y/TzU6bnzZa9ooTd4DyGVAOPfaT8JlS8lhcBxcf37TLb9PM/RrMK6/ZfAMp8FIaOoISPYAAs8pLMSCST89vhhfKmjm4jpaxKSrQA0HtYX0p/dU/a7t/IMOY3pQ9qsMe0fxilNHEUX/9k=',
@@ -89,6 +95,7 @@ const Projects: FC = () => {
     <div className='mt-5 flex flex-wrap justify-center'>
       {projectsData.map((data, i) => (
         <Project
+          id={data.id}
           key={`proj${i}`}
           no={i}
           imgSrc={data.imgSrc}
@@ -105,6 +112,7 @@ const Projects: FC = () => {
 };
 
 const Project: FC<ProjectProps> = ({
+  id,
   no,
   imgSrc,
   imgBlurDataURL,
@@ -115,7 +123,10 @@ const Project: FC<ProjectProps> = ({
   website,
 }) => {
   return (
-    <div className='flex max-w-7xl items-center justify-center px-2 py-8 lg:px-16 lg:py-10'>
+    <div
+      id={id}
+      className='flex max-w-7xl items-center justify-center px-2 py-8 lg:px-16 lg:py-10'
+    >
       <div
         className={`flex flex-col items-center gap-x-20 rounded-lg lg:flex-row ${
           no % 2 == 0 ? '' : 'lg:flex-row-reverse'
