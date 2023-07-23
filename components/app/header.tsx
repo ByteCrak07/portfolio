@@ -24,6 +24,7 @@ import AnimBorder from '@/components/ui/anim-border';
 import { Button } from '@/components/ui/button';
 import { gitHub } from '@/components/ui/icons';
 import { cn } from '@/lib/utils';
+import Command from './command';
 import { analyticsEvent } from './analytics';
 
 const Header: FC = () => {
@@ -91,21 +92,25 @@ const Header: FC = () => {
             </NavigationMenuList>
           </NavigationMenu>
 
-          {/* github for portfolio placed absolute */}
-          <a
-            className='absolute right-36 top-1/2 z-10 mr-1 hidden w-11 -translate-y-1/2 sm:block'
-            href='https://github.com/ByteCrak07/portfolio'
-            target='_blank'
-            rel='noopener noreferrer'
-            aria-label={`Portfolio Github`}
-          >
-            {gitHub}
-          </a>
+          {/* github for portfolio and search placed absolute */}
+          <div className='absolute right-28 top-1/2 z-10 mr-1 flex -translate-y-1/2 items-center sm:right-36'>
+            <Command iconOnly />
+            <a
+              className='hidden w-10 sm:block'
+              href='https://github.com/ByteCrak07/portfolio'
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label={`Portfolio Github`}
+            >
+              {gitHub}
+            </a>
+          </div>
 
           {/* resume */}
           <Dialog>
             <DialogTrigger
               className='relative outline-none'
+              id='resume-btn'
               onClick={() => {
                 analyticsEvent('open_resume_modal', {
                   category: 'Resume',

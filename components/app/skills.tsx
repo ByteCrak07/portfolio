@@ -148,6 +148,7 @@ const AllSkillsWrapper: FC = () => {
       <Dialog>
         <DialogTrigger
           className='outline-none'
+          id='skills-btn'
           onClick={() => {
             analyticsEvent('open_skills_modal', {
               category: 'Skills',

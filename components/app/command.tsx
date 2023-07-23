@@ -1,12 +1,16 @@
 'use client';
 
 import { FC, useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import {
   BookOpen,
+  BrainCircuit,
   CornerDownRight,
   FolderGit2,
+  GraduationCap,
   MessagesSquare,
   ScrollText,
+  Search,
   User,
 } from 'lucide-react';
 import {
@@ -18,15 +22,21 @@ import {
   CommandList,
   CommandSeparator,
 } from '@/components/ui/command';
+import { analyticsEvent } from './analytics';
 
-const Command: FC = () => {
+const Command: FC<{ iconOnly?: boolean }> = ({ iconOnly }) => {
   const [open, setOpen] = useState(false);
+  const router = useRouter();
 
+  // to open command dialog on pressing cmd+k
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
       if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
         setOpen((open) => !open);
+        analyticsEvent('open_search_command', {
+          category: 'Search',
+        });
       }
     };
 
@@ -34,9 +44,28 @@ const Command: FC = () => {
     return () => document.removeEventListener('keydown', down);
   }, []);
 
+  const openCommand = () => {
+    setOpen(true);
+    analyticsEvent('open_search_btn', {
+      category: 'Search',
+    });
+  };
+
   const selectCommand = (link: string) => {
     setOpen(false);
-    window.location.replace(link);
+    router.replace(link);
+  };
+
+  const openSkills = () => {
+    setOpen(false);
+    const skillsBtn = document.getElementById('skills-btn');
+    skillsBtn?.click();
+  };
+
+  const openResume = () => {
+    setOpen(false);
+    const resumeBtn = document.getElementById('resume-btn');
+    resumeBtn?.click();
   };
 
   const suggestions = [
@@ -111,15 +140,25 @@ const Command: FC = () => {
 
   return (
     <div>
-      <button
-        className='rounded border border-slate-700 bg-black px-3 py-2 text-sm outline-none hover:bg-muted focus:outline-none'
-        onClick={() => setOpen(true)}
-      >
-        Search this page...&nbsp;&nbsp;&nbsp;
-        <kbd className='pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100'>
-          <span className='text-xs'>⌘</span>K
-        </kbd>
-      </button>
+      {!iconOnly ? (
+        <button
+          className='rounded border border-slate-700 bg-black px-3 py-2 text-sm outline-none hover:bg-muted focus:outline-none'
+          onClick={openCommand}
+        >
+          <Search className='mr-2 inline h-4 w-4' />
+          Search this page...&nbsp;&nbsp;&nbsp;
+          <kbd className='pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100'>
+            <span className='text-xs'>⌘</span>K
+          </kbd>
+        </button>
+      ) : (
+        <button
+          className='flex items-center outline-none focus:outline-none'
+          onClick={openCommand}
+        >
+          <Search className='mr-3 h-8 w-8' />
+        </button>
+      )}
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder='Type to search...' />
         <CommandList>
@@ -134,6 +173,14 @@ const Command: FC = () => {
                 <span>{suggestion.name}</span>
               </CommandItem>
             ))}
+            <CommandItem onSelect={openSkills}>
+              <BrainCircuit className='mr-3 h-8 w-8' />
+              <span>Skills</span>
+            </CommandItem>
+            <CommandItem onSelect={openResume}>
+              <GraduationCap className='mr-3 h-8 w-8' />
+              <span>Resume</span>
+            </CommandItem>
           </CommandGroup>
           <CommandSeparator />
           <CommandGroup heading='Projects'>
