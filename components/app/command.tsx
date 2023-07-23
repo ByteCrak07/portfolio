@@ -1,8 +1,6 @@
 'use client';
 
 import { FC, useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { useCommandState } from 'cmdk';
 import {
   BookOpen,
   CornerDownRight,
@@ -23,8 +21,6 @@ import {
 
 const Command: FC = () => {
   const [open, setOpen] = useState(false);
-  const router = useRouter();
-  let commandValue = '';
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -38,40 +34,80 @@ const Command: FC = () => {
     return () => document.removeEventListener('keydown', down);
   }, []);
 
-  useEffect(() => {
-    const commandAction = () => {
-      setOpen(false);
-      if (commandValue !== 'bio')
-        router.push(`/#${commandValue.replace(/\s/g, '-')}`);
-      else router.push('/');
-    };
-
-    const detectEnter = (e: KeyboardEvent) => {
-      if (open && e.key === 'Enter') {
-        commandAction();
-      }
-    };
-
-    const detectClick = (e: MouseEvent) => {
-      if (open) {
-        commandAction();
-      }
-    };
-
-    document.addEventListener('keydown', detectEnter);
-    document.addEventListener('click', detectClick);
-    return () => {
-      document.removeEventListener('keydown', detectEnter);
-      document.removeEventListener('click', detectClick);
-    };
-  }, [open, commandValue, router]);
-
-  const CommandState = () => {
-    const value = useCommandState((state) => state.value);
-    commandValue = value;
-
-    return null;
+  const selectCommand = (link: string) => {
+    setOpen(false);
+    window.location.replace(link);
   };
+
+  const suggestions = [
+    {
+      name: 'Bio',
+      link: '/#',
+      icon: <User className='mr-2 h-4 w-4' />,
+    },
+    {
+      name: 'Projects',
+      link: '/#projects',
+      icon: <FolderGit2 className='mr-2 h-4 w-4' />,
+    },
+    {
+      name: 'Experience',
+      link: '/#experience',
+      icon: <ScrollText className='mr-2 h-4 w-4' />,
+    },
+    {
+      name: 'Blogs',
+      link: '/#blogs',
+      icon: <BookOpen className='mr-2 h-4 w-4' />,
+    },
+    {
+      name: 'Contact',
+      link: '/#contact',
+      icon: <MessagesSquare className='mr-2 h-4 w-4' />,
+    },
+  ];
+
+  const projects = [
+    {
+      name: 'Synchro.rs',
+      link: '/#synchro.rs',
+    },
+    {
+      name: 'KCART',
+      link: '/#kcart',
+    },
+    {
+      name: 'BingeWatch',
+      link: '/#bingewatch',
+    },
+    {
+      name: 'IEEE Website',
+      link: '/#ieee-website',
+    },
+    {
+      name: 'Agrify',
+      link: '/#agrify',
+    },
+  ];
+
+  const experiences = [
+    {
+      name: 'Buildbear Labs',
+      link: '/#buildbear-labs',
+    },
+    {
+      name: 'Cryptoliterature',
+      link: '/#cryptoliterature',
+    },
+    {
+      name: 'TATOS Technologies',
+      link: '/#tatos-technologies',
+    },
+    {
+      name: 'IEEE GEC THRISSUR',
+      link: '/#ieee-gec-thrissur',
+    },
+  ];
 
   return (
     <div>
@@ -89,69 +125,39 @@ const Command: FC = () => {
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading='Suggestions'>
-            <CommandItem>
-              <User className='mr-2 h-4 w-4' />
-              <span>Bio</span>
-            </CommandItem>
-            <CommandItem>
-              <FolderGit2 className='mr-2 h-4 w-4' />
-              <span>Projects</span>
-            </CommandItem>
-            <CommandItem>
-              <ScrollText className='mr-2 h-4 w-4' />
-              <span>Experience</span>
-            </CommandItem>
-            <CommandItem>
-              <BookOpen className='mr-2 h-4 w-4' />
-              <span>Blogs</span>
-            </CommandItem>
-            <CommandItem>
-              <MessagesSquare className='mr-2 h-4 w-4' />
-              <span>Contact</span>
-            </CommandItem>
+            {suggestions.map((suggestion, i) => (
+              <CommandItem
+                key={`suggestion-${i}`}
+                onSelect={() => selectCommand(suggestion.link)}
+              >
+                {suggestion.icon}
+                <span>{suggestion.name}</span>
+              </CommandItem>
+            ))}
           </CommandGroup>
           <CommandSeparator />
           <CommandGroup heading='Projects'>
-            <CommandItem>
-              <CornerDownRight className='mr-2 h-4 w-4' />
-              <span>Synchro.rs</span>
-            </CommandItem>
-            <CommandItem>
-              <CornerDownRight className='mr-2 h-4 w-4' />
-              <span>KCART</span>
-            </CommandItem>
-            <CommandItem>
-              <CornerDownRight className='mr-2 h-4 w-4' />
-              <span>BingeWatch</span>
-            </CommandItem>
-            <CommandItem>
-              <CornerDownRight className='mr-2 h-4 w-4' />
-              <span>IEEE Website</span>
-            </CommandItem>
-            <CommandItem>
-              <CornerDownRight className='mr-2 h-4 w-4' />
-              <span>Agrify</span>
-            </CommandItem>
+            {projects.map((project, i) => (
+              <CommandItem
+                key={`project-${i}`}
+                onSelect={() => selectCommand(project.link)}
+              >
+                <CornerDownRight className='mr-2 h-4 w-4' />
+                <span>{project.name}</span>
+              </CommandItem>
+            ))}
           </CommandGroup>
           <CommandGroup heading='Experience'>
-            <CommandItem>
-              <CornerDownRight className='mr-2 h-4 w-4' />
-              <span>Buildbear Labs</span>
-            </CommandItem>
-            <CommandItem>
-              <CornerDownRight className='mr-2 h-4 w-4' />
-              <span>Cryptoliterature</span>
-            </CommandItem>
-            <CommandItem>
-              <CornerDownRight className='mr-2 h-4 w-4' />
-              <span>TATOS Technologies</span>
-            </CommandItem>
-            <CommandItem>
-              <CornerDownRight className='mr-2 h-4 w-4' />
-              <span>IEEE GEC THRISSUR</span>
-            </CommandItem>
+            {experiences.map((experience, i) => (
+              <CommandItem
+                key={`experience-${i}`}
+                onSelect={() => selectCommand(experience.link)}
+              >
+                <CornerDownRight className='mr-2 h-4 w-4' />
+                <span>{experience.name}</span>
+              </CommandItem>
+            ))}
           </CommandGroup>
-          <CommandState />
         </CommandList>
       </CommandDialog>
     </div>

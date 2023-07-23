@@ -4,8 +4,8 @@ import Command from './command';
 const Footer: FC = () => {
   return (
     <footer className='glass-effect glow-box-sm mt-3 px-6 py-3 text-sm text-slate-400'>
-      <div className='mx-auto flex max-w-4xl items-center justify-between'>
-        <div>
+      <div className='mx-auto flex max-w-4xl flex-col-reverse items-center justify-between gap-y-3 md:flex-row'>
+        <div className='text-center md:text-left'>
           Made with ❤️{' '}
           <a
             href='https://nextjs.org'
