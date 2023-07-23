@@ -31,7 +31,7 @@ const Contact: FC = () => {
       message: 'Provide a valid subject',
     }),
     message: z.string().min(10, {
-      message: 'Enter atleast 10 characters',
+      message: 'Enter at least 10 characters',
     }),
     copy: z.boolean(),
   });

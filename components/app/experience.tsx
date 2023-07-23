@@ -40,7 +40,7 @@ const Experience: FC = () => {
             by forking from a diverse range of Ethereum-compatible chains.
             Explore and debug transactions effortlessly using their built-in
             explorer and transaction tracer. Mint popular ERC20 tokens with
-            their user-friendly faucet. Buildbear is primarly a blockchain
+            their user-friendly faucet. Buildbear is primarily a blockchain
             infrastructure company.
           </p>
           <ul className='ml-6 text-slate-400'>
