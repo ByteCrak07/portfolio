@@ -26,7 +26,16 @@ const Footer: FC = () => {
           </a>
           .
           <br />
-          Deployed on{' '}
+          Blogs hosted by{' '}
+          <a
+            href='https://hashnode.com'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='hover:text-white'
+          >
+            Hashnode
+          </a>
+          . Deployed on{' '}
           <a
             href='https://vercel.com'
             target='_blank'

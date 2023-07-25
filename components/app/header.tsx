@@ -39,7 +39,7 @@ const Header: FC = () => {
     },
     {
       name: 'Blogs',
-      link: '#blogs',
+      link: 'https://blog.abilsavio.tech',
     },
     {
       name: 'Contact',
@@ -79,6 +79,7 @@ const Header: FC = () => {
                 <NavigationMenuItem key={`menu${i}`}>
                   <Link href={menu.link} legacyBehavior passHref>
                     <NavigationMenuLink
+                      target={menu.link.startsWith('http') ? '_blank' : '_self'}
                       className={cn(
                         navigationMenuTriggerStyle() +
                           ' bg-transparent text-lg font-semibold hover:bg-black'

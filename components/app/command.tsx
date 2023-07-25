@@ -51,9 +51,11 @@ const Command: FC<{ iconOnly?: boolean }> = ({ iconOnly }) => {
     });
   };
 
-  const selectCommand = (link: string) => {
+  const selectCommand = (link: string, newTab?: boolean) => {
     setOpen(false);
-    router.replace(link);
+
+    if (!newTab) router.replace(link);
+    else window.open(link, '_blank');
   };
 
   const openSkills = () => {
@@ -138,6 +140,17 @@ const Command: FC<{ iconOnly?: boolean }> = ({ iconOnly }) => {
     },
   ];
 
+  const blogs = [
+    {
+      name: 'Email contact form using NextJS (App router)',
+      link: 'https://blog.abilsavio.tech/email-contact-form-using-nextjs-app-router',
+    },
+    {
+      name: 'Pocketbase OAuth on NextJS',
+      link: 'https://blog.abilsavio.tech/pocketbase-oauth-on-nextjs',
+    },
+  ];
+
   return (
     <div>
       {!iconOnly ? (
@@ -202,6 +215,17 @@ const Command: FC<{ iconOnly?: boolean }> = ({ iconOnly }) => {
               >
                 <CornerDownRight className='mr-2 h-4 w-4' />
                 <span>{experience.name}</span>
+              </CommandItem>
+            ))}
+          </CommandGroup>
+          <CommandGroup heading='Blogs'>
+            {blogs.map((blog, i) => (
+              <CommandItem
+                key={`blog-${i}`}
+                onSelect={() => selectCommand(blog.link, true)}
+              >
+                <CornerDownRight className='mr-2 h-4 w-4' />
+                <span>{blog.name}</span>
               </CommandItem>
             ))}
           </CommandGroup>

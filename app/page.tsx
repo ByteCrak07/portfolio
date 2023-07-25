@@ -74,10 +74,20 @@ export default function Home() {
         id='blogs'
         className='glass-effect glow-box-sm m-3 flex flex-col rounded-xl px-6 py-10 sm:mx-16 sm:my-10 sm:px-32 sm:py-20'
       >
-        <h2 className='text-3xl font-bold sm:text-4xl'>Blogs</h2>
+        <h2 className='text-3xl font-bold sm:text-4xl'>
+          Blogs <span className='text-2xl'>(Powered by Hashnode)</span>
+        </h2>
         <p className='mt-2 text-lg'>
           Explore my blogs where I share insights, tips, and experiences from my
-          journey as a developer.
+          journey as a developer. Explore all my blogs at{' '}
+          <a
+            className='hover:text-glow font-semibold underline hover:cursor-pointer'
+            href='https://blog.abilsavio.tech'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            blog.abilsavio.tech
+          </a>
         </p>
         <Blogs />
       </section>

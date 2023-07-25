@@ -148,6 +148,11 @@ html {
   transition: color 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.hover\:text-glow:hover {
+  color: var(--glow-shadow-color);
+  transition: color 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .bg-glow {
   background-color: var(--glow-shadow-color);
   transition: background-color 1s cubic-bezier(0.4, 0, 0.2, 1);
