@@ -8,6 +8,7 @@ import {
   Projects,
   Skills,
   SocialLinks,
+  Spotify,
 } from '@/components/app';
 
 export default function Home() {
@@ -44,6 +45,10 @@ export default function Home() {
 
         <div className='mt-14 sm:mt-20'>
           <SocialLinks />
+        </div>
+
+        <div className='mt-14 sm:mt-20'>
+          <Spotify />
         </div>
       </section>
 

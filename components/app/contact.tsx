@@ -54,9 +54,9 @@ const Contact: FC = () => {
     return fetch(url, {
       method: 'POST',
       body: JSON.stringify(arg),
-    }).then((res) => {
-      if (res.status !== 200) throw new Error('Something went wrong');
-      return res.json();
+    }).then(async (res) => {
+      if (res.ok) return res.json();
+      else return Promise.reject(await res.json());
     });
   }
 

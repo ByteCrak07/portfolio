@@ -12,6 +12,7 @@ import NotFoundImg from './not-found-img';
 import Projects from './projects';
 import Skills from './skills';
 import SocialLinks from './social-links';
+import Spotify from './spotify';
 
 export {
   Analytics,
@@ -28,4 +29,5 @@ export {
   Projects,
   Skills,
   SocialLinks,
+  Spotify,
 };
