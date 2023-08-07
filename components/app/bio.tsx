@@ -114,8 +114,9 @@ const Bio: FC = () => {
             )
           )}
         <br />
-        {`I'm a self taught developer and currently learning Rust.
-          Currently, I'm a senior pursuing a Bachelor's Degree in Computer Science and working at `
+        {`I'm a self taught developer and I'm currently learning Rust.
+          Problem solving, learning new technologies and building cool stuff is what I love to do. 
+          Currently, exploring the facinating world of Web3 and I'm working at `
           .split('')
           .map((i, index) =>
             i == ' ' ? (
@@ -130,7 +131,7 @@ const Bio: FC = () => {
           href='https://www.buildbear.io'
           rel='noopener noreferrer'
         >
-          {`BuildBear`
+          {`BuildBear Labs`
             .split('')
             .map((i, index) =>
               i == ' ' ? (
@@ -186,9 +187,9 @@ const Bio: FC = () => {
           Kerala, India.
           <br />I specialize in crafting seamless digital experiences.
           <br />
-          I&apos;m a self taught developer and currently learning Rust.
-          Currently, I&apos;m a senior pursuing a Bachelor&apos;s Degree in
-          Computer Science and working at BuildBear as a Full Stack Intern.
+          I&apos;m a self taught developer and I&apos;m currently learning Rust.
+          Problem solving, learning new technologies and building cool stuff is what I love to do. 
+          Currently, exploring the facinating world of Web3 and I&apos;m working at BuildBear Labs as a Full Stack Intern.
         </div>
         <div className='flex items-center'>
           <div

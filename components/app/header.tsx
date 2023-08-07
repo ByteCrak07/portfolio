@@ -98,10 +98,10 @@ const Header: FC = () => {
             <Command iconOnly />
             <a
               className='hidden w-10 sm:block'
-              href='https://github.com/ByteCrak07/portfolio'
+              href='https://github.com/ByteCrak07'
               target='_blank'
               rel='noopener noreferrer'
-              aria-label={`Portfolio Github`}
+              aria-label={`Github Profile`}
             >
               {gitHub}
             </a>
