@@ -8,6 +8,7 @@ import Contact from './contact';
 import Experience from './experience';
 import Footer from './footer';
 import Header from './header';
+import IntroLoader from './intro-loader';
 import NotFoundImg from './not-found-img';
 import Projects from './projects';
 import Skills from './skills';
@@ -25,6 +26,7 @@ export {
   Experience,
   Footer,
   Header,
+  IntroLoader,
   NotFoundImg,
   Projects,
   Skills,

@@ -44,7 +44,7 @@ const Bio: FC = () => {
 
   return (
     <div
-      className={`${inconsolataFont.className} relative mx-auto mt-14 max-w-6xl overflow-hidden rounded-xl bg-black p-5 pt-14 sm:mt-20 sm:p-10 sm:pt-14`}
+      className={`${inconsolataFont.className} relative mx-auto mt-14 max-w-6xl animate-rise-up-slow overflow-hidden rounded-xl bg-black p-5 pt-14 sm:mt-20 sm:p-10 sm:pt-14`}
     >
       <div className='absolute left-0 top-0 flex gap-x-0.5'>
         <button
@@ -85,7 +85,7 @@ const Bio: FC = () => {
               <Letter key={`intro-${index}`} space letter={i} />
             ) : (
               <Letter key={`intro-${index}`} letter={i} />
-            )
+            ),
           )}{' '}
         <a
           className={completedTxtRender ? 'hover:underline' : ''}
@@ -100,7 +100,7 @@ const Bio: FC = () => {
                 <Letter key={`intro-${index}`} space letter={i} />
               ) : (
                 <Letter key={`intro-${index}`} letter={i} />
-              )
+              ),
             )}
         </a>
         <br />
@@ -111,7 +111,7 @@ const Bio: FC = () => {
               <Letter key={`intro-${index}`} space letter={i} />
             ) : (
               <Letter key={`intro-${index}`} letter={i} />
-            )
+            ),
           )}
         <br />
         {`I'm a self taught developer and I'm currently learning Rust.
@@ -123,7 +123,7 @@ const Bio: FC = () => {
               <Letter key={`intro-${index}`} space letter={i} />
             ) : (
               <Letter key={`intro-${index}`} letter={i} />
-            )
+            ),
           )}
         <a
           className={completedTxtRender ? 'hover:underline' : ''}
@@ -138,7 +138,7 @@ const Bio: FC = () => {
                 <Letter key={`intro-${index}`} space letter={i} />
               ) : (
                 <Letter key={`intro-${index}`} letter={i} />
-              )
+              ),
             )}
         </a>
         {` as a Full Stack Intern.`
@@ -148,7 +148,7 @@ const Bio: FC = () => {
               <Letter key={`intro-${index}`} space letter={i} />
             ) : (
               <Letter key={`intro-${index}`} letter={i} />
-            )
+            ),
           )}
         <span
           className={`blinking-cursor ${completedTxtRender ? '' : 'hidden'}`}
@@ -188,8 +188,9 @@ const Bio: FC = () => {
           <br />I specialize in crafting seamless digital experiences.
           <br />
           I&apos;m a self taught developer and I&apos;m currently learning Rust.
-          Problem solving, learning new technologies and building cool stuff is what I love to do. 
-          Currently, exploring the facinating world of Web3 and I&apos;m working at BuildBear Labs as a Full Stack Intern.
+          Problem solving, learning new technologies and building cool stuff is
+          what I love to do. Currently, exploring the facinating world of Web3
+          and I&apos;m working at BuildBear Labs as a Full Stack Intern.
         </div>
         <div className='flex items-center'>
           <div
