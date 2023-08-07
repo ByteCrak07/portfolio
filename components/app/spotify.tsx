@@ -36,9 +36,7 @@ const Spotify: FC = () => {
     process.env.NODE_ENV === 'production' ? { refreshInterval: 3000 } : {}
   );
 
-  if (error) return <>{console.log(error)}</>;
-
-  if (isLoading)
+  if (isLoading || error)
     return (
       <div
         className={`inline-flex min-w-[250px] rounded-xl bg-black p-3 pr-3 md:pr-10`}

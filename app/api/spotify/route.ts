@@ -50,7 +50,7 @@ async function getCurrentTrack(accessToken: string) {
     );
 
     const data = await response.json();
-    return data;
+    return data ? data : null;
   } catch (err) {
     return null;
   }
@@ -73,7 +73,7 @@ async function getLastPlayedTrack(accessToken: string) {
     );
 
     const data = await response.json();
-    return data;
+    return data ? data : null;
   } catch (err) {
     return null;
   }
