@@ -114,8 +114,7 @@ const Bio: FC = () => {
             )
           )}
         <br />
-        {`Also, I seek inspiration and new experiences by traveling and
-          discovering the world. I'm a self taught developer and currently learning Rust.
+        {`I'm a self taught developer and currently learning Rust.
           Currently, I'm a senior pursuing a Bachelor's Degree in Computer Science and working at `
           .split('')
           .map((i, index) =>
@@ -187,11 +186,9 @@ const Bio: FC = () => {
           Kerala, India.
           <br />I specialize in crafting seamless digital experiences.
           <br />
-          Also, I seek inspiration and new experiences by traveling and
-          discovering the world. I&apos;m a self taught developer and currently
-          learning Rust. Currently, I&apos;m a senior pursuing a Bachelor&apos;s
-          Degree in Computer Science and working at BuildBear as a Full Stack
-          Intern.
+          I&apos;m a self taught developer and currently learning Rust.
+          Currently, I&apos;m a senior pursuing a Bachelor&apos;s Degree in
+          Computer Science and working at BuildBear as a Full Stack Intern.
         </div>
         <div className='flex items-center'>
           <div
