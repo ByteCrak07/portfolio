@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 const Experience: FC = () => {
   return (
-    <div className='ml-2 mt-10 sm:ml-20 sm:mt-16'>
+    <div className='ml-2 mt-10 sm:ml-5 sm:mt-16 xl:ml-14'>
       <ol className='border-glow relative border-l-2'>
         <li className='mb-10 ml-4'>
           <div className='bg-glow absolute -left-[7px] mt-1.5 h-3 w-3 rounded-full border border-slate-800'></div>

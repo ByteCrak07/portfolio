@@ -53,7 +53,9 @@ export default function RootLayout({
       >
         <Toaster closeButton richColors position='bottom-right' theme='dark' />
         <Header />
-        {children}
+        <main className='mt-[92px] flex flex-grow flex-col sm:mt-[148px]'>
+          {children}
+        </main>
         <Analytics />
         <ConsoleTxt />
         <Footer />

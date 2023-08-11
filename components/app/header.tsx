@@ -82,7 +82,7 @@ const Header: FC = () => {
                       target={menu.link.startsWith('http') ? '_blank' : '_self'}
                       className={cn(
                         navigationMenuTriggerStyle() +
-                          ' bg-transparent text-lg font-semibold hover:bg-black'
+                          ' bg-transparent text-lg font-semibold hover:bg-black',
                       )}
                     >
                       {menu.name}
@@ -158,7 +158,6 @@ const Header: FC = () => {
           </Dialog>
         </header>
       </div>
-      <div className='h-[92px] sm:h-[148px]'></div>
     </>
   );
 };

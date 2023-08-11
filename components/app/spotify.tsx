@@ -33,7 +33,7 @@ const Spotify: FC = () => {
   const { data, error, isLoading } = useSWR<SpotifyTrackData>(
     '/api/spotify',
     fetcher,
-    process.env.NODE_ENV === 'production' ? { refreshInterval: 3000 } : {}
+    process.env.NODE_ENV === 'production' ? { refreshInterval: 3000 } : {},
   );
 
   if (isLoading || error)
@@ -47,10 +47,10 @@ const Spotify: FC = () => {
 
         <div className='mx-5'>
           <div className='mb-5 mt-1'>
-            <div className='w-40 animate-pulse rounded-full bg-gray-800 p-2'></div>
+            <div className='w-28 animate-pulse rounded-full bg-gray-800 p-2 sm:w-40'></div>
           </div>
-          <div className='mb-2 w-48 animate-pulse rounded-full bg-gray-800 p-3'></div>
-          <div className='w-52 animate-pulse rounded-full bg-gray-800 p-2'></div>
+          <div className='mb-2 w-32 animate-pulse rounded-full bg-gray-800 p-3 sm:w-48'></div>
+          <div className='w-40 animate-pulse rounded-full bg-gray-800 p-2 sm:w-52'></div>
         </div>
       </div>
     );

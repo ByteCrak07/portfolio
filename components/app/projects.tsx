@@ -125,10 +125,10 @@ const Project: FC<ProjectProps> = ({
   return (
     <div
       id={id}
-      className='flex max-w-7xl items-center justify-center px-2 py-8 lg:px-16 lg:py-10'
+      className='flex max-w-7xl items-center justify-center px-2 py-8 xl:px-16 xl:py-10'
     >
       <div
-        className={`flex flex-col items-center gap-x-20 rounded-lg lg:flex-row ${
+        className={`flex flex-col items-center gap-x-20 rounded-lg lg:flex-row xl:gap-x-32 ${
           no % 2 == 0 ? '' : 'lg:flex-row-reverse'
         }`}
       >
@@ -143,7 +143,7 @@ const Project: FC<ProjectProps> = ({
             blurDataURL={imgBlurDataURL}
           />
         </div>
-        <div className='flex flex-1 flex-col justify-between px-4 pb-0 pt-5 leading-normal lg:px-10 lg:py-4'>
+        <div className='flex flex-1 flex-col justify-between pb-0 pt-5 leading-normal lg:py-4'>
           <div className='mb-5 flex items-center justify-center lg:justify-normal'>
             <h3 className='text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>
               {title}
