@@ -1,12 +1,19 @@
 'use client';
 
 import { gsap } from 'gsap';
-import { FC, useEffect, useRef, useState } from 'react';
+import { FC, forwardRef, useEffect, useRef, useState } from 'react';
 
-// exposing setIsVowel function from AnimIntroText component
-let setIsVowel: (isVowel: boolean) => void;
+interface AnimTextProps {
+  setIsVowel: (isVowel: boolean) => void;
+}
 
-const AnimText: FC = () => {
+interface LetterProps {
+  letter: string;
+  space?: boolean;
+  hidden?: boolean;
+}
+
+const AnimText: FC<AnimTextProps> = ({ setIsVowel }) => {
   const [init, setInit] = useState(true);
   const [textIndex, setTextIndex] = useState(0);
   const [isTransparent, setIsTransparent] = useState(true);
@@ -34,7 +41,7 @@ const AnimText: FC = () => {
     if (rootElement)
       rootElement.style.setProperty(
         '--glow-shadow-color',
-        `${colors[textIndex].replace(', 1)', ', 0.75)')}`
+        `${colors[textIndex].replace(', 1)', ', 0.75)')}`,
       );
 
     let ctx = gsap.context(() => {
@@ -65,7 +72,7 @@ const AnimText: FC = () => {
             each: 0.1,
           },
         },
-        '>2'
+        '>2',
       );
     }, textRef);
 
@@ -96,7 +103,7 @@ const AnimText: FC = () => {
               <Letter key={`${texts[textIndex]}-${index}`} space letter={i} />
             ) : (
               <Letter key={`${texts[textIndex]}-${index}`} letter={i} />
-            )
+            ),
           )}
       </div>
     </>
@@ -105,22 +112,22 @@ const AnimText: FC = () => {
 
 const AnimIntroText: FC = () => {
   const text1 = `Hey, Abil here`;
-  const [text2, setText2] = useState(`I'm a`);
+  const text2 = `I'm a`;
   const textRef1 = useRef<HTMLDivElement>(null);
   const textRef2 = useRef<HTMLDivElement>(null);
+  const wavingHandRef = useRef<HTMLSpanElement>(null);
+  const ifVowelRef = useRef<HTMLSpanElement>(null);
 
-  setIsVowel = (isVowel: boolean) => {
-    if (isVowel) setText2(`I'm an`);
-    else setText2(`I'm a`);
+  const setIsVowel = (isVowel: boolean) => {
+    if (isVowel) ifVowelRef.current?.classList.remove('hidden');
+    else ifVowelRef.current?.classList.add('hidden');
   };
 
   useEffect(() => {
     let ctx = gsap.context(() => {
       let textAnimation = gsap.timeline({
         onComplete: () => {
-          const wavingHand = document.getElementById(
-            'waving-hand'
-          ) as HTMLElement;
+          const wavingHand = wavingHandRef.current;
           if (wavingHand) wavingHand.classList.add('wave');
         },
       });
@@ -169,10 +176,10 @@ const AnimIntroText: FC = () => {
               <Letter key={`intro-${index}`} space letter={i} />
             ) : (
               <Letter key={`intro-${index}`} letter={i} />
-            )
+            ),
           )}
         &nbsp;&nbsp;
-        <Letter letter='👋' id='waving-hand' />
+        <Letter letter='👋' ref={wavingHandRef} />
       </div>
 
       <div
@@ -186,26 +193,30 @@ const AnimIntroText: FC = () => {
               <Letter key={`intro-${index}`} space letter={i} />
             ) : (
               <Letter key={`intro-${index}`} letter={i} />
-            )
+            ),
           )}
-        &nbsp;&nbsp;&nbsp;&nbsp; <AnimText />
+        <Letter letter='n' hidden ref={ifVowelRef} /> &nbsp;&nbsp;&nbsp;&nbsp;{' '}
+        <AnimText setIsVowel={setIsVowel} />
       </div>
     </>
   );
 };
 
-const Letter: FC<{ letter: string; space?: boolean; id?: string }> = ({
-  letter,
-  space,
-  id,
-}) => {
-  return space ? (
-    <span className='anim-text text-xl sm:text-4xl'>&nbsp;&nbsp;</span>
-  ) : (
-    <span className='anim-text text-3xl sm:text-5xl' id={id}>
-      {letter}
-    </span>
-  );
-};
+const Letter = forwardRef<HTMLSpanElement, LetterProps>(
+  ({ letter, space, hidden }, ref) => {
+    return space ? (
+      <span className='anim-text text-xl sm:text-4xl'>&nbsp;&nbsp;</span>
+    ) : (
+      <span
+        className={`anim-text text-3xl sm:text-5xl ${hidden ? 'hidden' : ''}`}
+        ref={ref}
+      >
+        {letter}
+      </span>
+    );
+  },
+);
+
+Letter.displayName = 'Letter';
 
 export default AnimIntroText;
