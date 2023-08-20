@@ -58,7 +58,7 @@ const Spotify: FC = () => {
   if (data)
     return (
       <div
-        className={`${interFont.className} inline-flex min-w-[250px] rounded-xl bg-black p-3 pr-3 md:pr-10`}
+        className={`${interFont.className} inline-flex min-w-[250px] max-w-[500px] rounded-xl bg-black p-3 pr-3 md:pr-10`}
       >
         <a href={data.href} target='_blank' rel='noopener noreferrer'>
           <div className='relative w-[75px] overflow-hidden rounded-lg sm:w-[100px]'>
@@ -74,7 +74,7 @@ const Spotify: FC = () => {
           </div>
         </a>
 
-        <div className='mx-5'>
+        <div className='mx-5 overflow-x-hidden'>
           <div className='mb-3 text-xs font-semibold text-gray-300 sm:text-sm'>
             {data.currentlyPlaying ? 'LISTENING TO SPOTIFY' : 'LAST PLAYED'}
           </div>
@@ -82,11 +82,11 @@ const Spotify: FC = () => {
             href={data.href}
             target='_blank'
             rel='noopener noreferrer'
-            className='line-clamp-1 text-base font-bold hover:underline sm:text-lg'
+            className='line-clamp-1 text-base font-bold hover:line-clamp-none hover:animate-marquee hover:whitespace-nowrap hover:underline sm:text-lg'
           >
             {data.name}
           </a>
-          <div className='line-clamp-1 text-sm font-semibold sm:text-base'>
+          <div className='line-clamp-1 text-sm font-semibold hover:line-clamp-none hover:animate-marquee hover:whitespace-nowrap sm:text-base'>
             By
             {data.artists.map((artist, i) => (
               <span key={`artist${i}`} className='ml-1'>

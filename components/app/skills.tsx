@@ -62,21 +62,25 @@ const jostFont = Jost({
 const TopSkills: FC = () => {
   return (
     <>
-      <h3 className='mb-4 flex items-center gap-x-5 text-3xl font-bold sm:text-4xl'>
+      <h3 className='mb-8 flex items-center gap-x-5 text-3xl font-bold sm:text-4xl'>
         Top Skills
         <div className='flex items-center'>
           <AllSkillsWrapper />
         </div>
       </h3>
       <div
-        className={`${jostFont.className} mb-8 flex flex-wrap justify-center gap-x-5 gap-y-8 sm:justify-normal`}
+        className={`${jostFont.className} mb-8 flex flex-wrap justify-center gap-x-5 gap-y-8`}
       >
-        <SkillIcon icon={react} label='React' />
-        <SkillIcon icon={nextJS} label='Next.js' />
-        <SkillIcon icon={nodeJS} label='Node.js' />
-        <SkillIcon icon={typeScript} label='TypeScript' />
-        <SkillIcon icon={express} label='Express.js' />
-        <SkillIcon icon={go} label='Go' />
+        <div className='flex flex-wrap justify-center gap-x-5 gap-y-8'>
+          <SkillIcon icon={react} label='React' />
+          <SkillIcon icon={nextJS} label='Next.js' />
+          <SkillIcon icon={nodeJS} label='Node.js' />
+        </div>
+        <div className='flex flex-wrap justify-center gap-x-5 gap-y-8'>
+          <SkillIcon icon={typeScript} label='TypeScript' />
+          <SkillIcon icon={express} label='Express.js' />
+          <SkillIcon icon={go} label='Go' />
+        </div>
       </div>
     </>
   );
@@ -157,7 +161,7 @@ const AllSkillsWrapper: FC = () => {
         >
           <AnimBorder rounded>
             <span className='glass-effect flex items-center rounded-full px-3 py-2 text-base hover:bg-white hover:bg-opacity-10'>
-              All skills
+              All&nbsp;skills
             </span>
           </AnimBorder>
         </DialogTrigger>
@@ -179,9 +183,9 @@ const SkillIcon: FC<{ icon: JSX.Element; label: string }> = ({
   label,
 }) => {
   return (
-    <div className='glow-box-sm flex flex-col items-center rounded-xl bg-slate-400 bg-opacity-20 px-4 py-3'>
-      <div className='w-12 sm:w-16'>{icon}</div>
-      <div className='mt-2 text-center font-sans text-sm font-semibold sm:text-lg'>
+    <div className='glow-box-sm glow-box-sm-hover skill-glow group flex flex-col items-center rounded-xl bg-slate-400 bg-opacity-20 px-4 py-3 transition-all hover:-mx-1.5'>
+      <div className='w-12 group-hover:mx-1.5 sm:w-16'>{icon}</div>
+      <div className='mt-2 text-center font-sans text-sm font-semibold group-hover:mx-1.5 sm:text-lg'>
         {label}
       </div>
     </div>
