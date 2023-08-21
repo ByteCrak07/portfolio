@@ -132,20 +132,22 @@ const Project: FC<ProjectProps> = ({
           no % 2 == 0 ? '' : 'lg:flex-row-reverse'
         }`}
       >
-        <div className='glow-box-sm flex-1 overflow-hidden rounded-lg'>
-          <Image
-            src={imgSrc}
-            alt={title}
-            height={248}
-            width={496}
-            className='object-cover'
-            placeholder='blur'
-            blurDataURL={imgBlurDataURL}
-          />
+        <div className='flex flex-1 justify-center'>
+          <div className='glow-box-sm overflow-hidden rounded-lg'>
+            <Image
+              src={imgSrc}
+              alt={title}
+              height={248}
+              width={496}
+              className='object-cover'
+              placeholder='blur'
+              blurDataURL={imgBlurDataURL}
+            />
+          </div>
         </div>
         <div className='flex flex-1 flex-col justify-between pb-0 pt-5 leading-normal lg:py-4'>
           <div className='mb-5 flex items-center justify-center lg:justify-normal'>
-            <h3 className='text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>
+            <h3 className='text-2xl font-bold tracking-tight text-white'>
               {title}
             </h3>
             <div className='ml-3 flex'>
@@ -159,7 +161,7 @@ const Project: FC<ProjectProps> = ({
           <p className='mb-3 text-justify text-gray-700 dark:text-gray-400'>
             {content}
           </p>
-          <div className='flex items-center'>
+          <div className='flex items-center justify-center lg:justify-normal'>
             <a
               className='mr-2 w-8'
               href={github}
