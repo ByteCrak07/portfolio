@@ -3,6 +3,8 @@
 import { useEffect, useRef } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useLenis } from '@studio-freight/react-lenis';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
   AnimIntroText,
   Bio,
@@ -15,6 +17,8 @@ import {
   SocialLinks,
   Spotify,
 } from '@/components/app';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   const searchParams = useSearchParams();
@@ -29,9 +33,51 @@ export default function Home() {
     else lenis?.scrollTo(0);
   }, [searchParams, lenis]);
 
+  useEffect(() => {
+    const ctx = gsap.context((self: any) => {
+      const leftSections: HTMLElement[] = self.selector('.left-section');
+      leftSections.forEach((section) => {
+        const timeline1 = gsap.timeline({
+          scrollTrigger: {
+            trigger: section,
+            start: '100vh bottom',
+            end: '400vh bottom',
+            scrub: true,
+            // markers: true,
+          },
+        });
+
+        timeline1.from(section, {
+          transform: 'translateX(-150%)',
+        });
+      });
+
+      const rightSections: HTMLElement[] = self.selector('.right-section');
+      rightSections.forEach((section) => {
+        const timeline1 = gsap.timeline({
+          scrollTrigger: {
+            trigger: section,
+            start: '100vh bottom',
+            end: '400vh bottom',
+            scrub: true,
+            // markers: true,
+          },
+        });
+
+        timeline1.from(section, {
+          transform: 'translateX(150%)',
+        });
+      });
+    }, main);
+
+    return () => {
+      ctx.revert();
+    };
+  }, []);
+
   return (
     <main
-      className='mt-[92px] flex flex-grow flex-col sm:mt-[148px]'
+      className='mt-[92px] flex flex-grow flex-col overflow-x-hidden sm:mt-[148px]'
       ref={main}
     >
       <section className='glass-effect glow-box-sm m-3 mt-5 flex flex-col rounded-xl px-6 py-10 sm:mx-16 sm:mb-10 sm:px-32 sm:py-20 lg:mx-36'>
@@ -63,7 +109,7 @@ export default function Home() {
 
       <section
         id='projects'
-        className='glass-effect glow-box-sm m-3 mt-10 flex flex-col rounded-xl px-6 py-10 sm:mx-16 sm:my-10 sm:px-32 sm:py-20 lg:mx-36'
+        className='left-section glass-effect glow-box-sm m-3 mt-10 flex flex-col rounded-xl px-6 py-10 sm:mx-16 sm:my-10 sm:px-32 sm:py-20 lg:mx-36'
       >
         <h2 className='text-3xl font-bold sm:text-4xl'>Projects</h2>
         <p className='mt-2 text-base sm:text-lg'>
@@ -75,7 +121,7 @@ export default function Home() {
 
       <section
         id='experience'
-        className='glass-effect glow-box-sm m-3 mt-10 flex flex-col rounded-xl px-6 py-10 sm:mx-16 sm:my-10 sm:px-32 sm:py-20 lg:mx-36'
+        className='right-section glass-effect glow-box-sm m-3 mt-10 flex flex-col rounded-xl px-6 py-10 sm:mx-16 sm:my-10 sm:px-32 sm:py-20 lg:mx-36'
       >
         <h2 className='text-3xl font-bold sm:text-4xl'>Experience</h2>
         <p className='mt-2 text-base sm:text-lg'>
@@ -86,7 +132,7 @@ export default function Home() {
 
       <section
         id='blogs'
-        className='glass-effect glow-box-sm m-3 mt-10 flex flex-col rounded-xl px-6 py-10 sm:mx-16 sm:my-10 sm:px-32 sm:py-20 lg:mx-36'
+        className='left-section glass-effect glow-box-sm m-3 mt-10 flex flex-col rounded-xl px-6 py-10 sm:mx-16 sm:my-10 sm:px-32 sm:py-20 lg:mx-36'
       >
         <h2 className='text-3xl font-bold sm:text-4xl'>Blogs</h2>
         <p className='mt-2 text-base sm:text-lg'>
@@ -106,7 +152,7 @@ export default function Home() {
 
       <section
         id='contact'
-        className='glass-effect glow-box-sm m-3 mt-10 flex flex-col rounded-xl px-6 py-10 sm:mx-16 sm:my-10 sm:px-32 sm:py-20 lg:mx-36'
+        className='right-section glass-effect glow-box-sm m-3 mt-10 flex flex-col rounded-xl px-6 py-10 sm:mx-16 sm:my-10 sm:px-32 sm:py-20 lg:mx-36'
       >
         <h2 className='text-3xl font-bold sm:text-4xl'>Contact</h2>
         <p className='mt-2 text-base sm:text-lg'>
