@@ -102,7 +102,6 @@
 
 html {
   scroll-padding-top: 140px;
-  scroll-behavior: smooth !important;
 }
 
 .glass-effect {
@@ -272,4 +271,25 @@ html {
   100% {
     background-position: 0% 0%;
   }
+}
+
+/* lenis styles */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }

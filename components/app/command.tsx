@@ -54,7 +54,7 @@ const Command: FC<{ iconOnly?: boolean }> = ({ iconOnly }) => {
   const selectCommand = (link: string, newTab?: boolean) => {
     setOpen(false);
 
-    if (!newTab) router.replace(link);
+    if (!newTab) router.replace(link, { scroll: false });
     else window.open(link, '_blank');
   };
 

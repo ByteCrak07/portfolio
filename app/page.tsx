@@ -1,3 +1,8 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
+import { useSearchParams } from 'next/navigation';
+import { useLenis } from '@studio-freight/react-lenis';
 import {
   AnimIntroText,
   Bio,
@@ -12,8 +17,23 @@ import {
 } from '@/components/app';
 
 export default function Home() {
+  const searchParams = useSearchParams();
+  const main = useRef<HTMLElement>(null);
+  const lenis = useLenis();
+
+  // for lenis smooth scroll while hash link change
+  useEffect(() => {
+    const hash = window.location.hash.split('#')[1];
+
+    if (hash) lenis?.scrollTo('#' + hash, { offset: -140 });
+    else lenis?.scrollTo(0);
+  }, [searchParams, lenis]);
+
   return (
-    <>
+    <main
+      className='mt-[92px] flex flex-grow flex-col sm:mt-[148px]'
+      ref={main}
+    >
       <section className='glass-effect glow-box-sm m-3 mt-5 flex flex-col rounded-xl px-6 py-10 sm:mx-16 sm:mb-10 sm:px-32 sm:py-20 lg:mx-36'>
         <div className='relative flex flex-col items-center justify-center gap-x-28 gap-y-5 lg:flex-row'>
           <IntroLoader />
@@ -95,6 +115,6 @@ export default function Home() {
         </p>
         <Contact />
       </section>
-    </>
+    </main>
   );
 }

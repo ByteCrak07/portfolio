@@ -11,6 +11,7 @@ import Header from './header';
 import IntroLoader from './intro-loader';
 import NotFoundImg from './not-found-img';
 import Projects from './projects';
+import ReactLenis from './lenis';
 import Skills from './skills';
 import SocialLinks from './social-links';
 import Spotify from './spotify';
@@ -29,6 +30,7 @@ export {
   IntroLoader,
   NotFoundImg,
   Projects,
+  ReactLenis,
   Skills,
   SocialLinks,
   Spotify,

@@ -2,7 +2,13 @@ import './globals.css';
 import { Bitter } from 'next/font/google';
 import { Toaster } from 'sonner';
 import { appMetadata, jsonLdWebPage, jsonLdPerson } from '@/seo';
-import { Analytics, ConsoleTxt, Footer, Header } from '@/components/app';
+import {
+  Analytics,
+  ConsoleTxt,
+  Footer,
+  Header,
+  ReactLenis,
+} from '@/components/app';
 
 const bitterFont = Bitter({ subsets: ['latin'], display: 'swap' });
 
@@ -51,14 +57,14 @@ export default function RootLayout({
       <body
         className={`${bitterFont.className} dark flex min-h-screen flex-col`}
       >
-        <Toaster closeButton richColors position='bottom-right' theme='dark' />
-        <Header />
-        <main className='mt-[92px] flex flex-grow flex-col sm:mt-[148px]'>
+        <ReactLenis root>
+          <Header />
           {children}
-        </main>
-        <Analytics />
+          <Analytics />
+          <Footer />
+        </ReactLenis>
+        <Toaster closeButton richColors position='bottom-right' theme='dark' />
         <ConsoleTxt />
-        <Footer />
       </body>
     </html>
   );

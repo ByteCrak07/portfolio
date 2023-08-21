@@ -52,7 +52,7 @@ const Header: FC = () => {
       <div className='fixed z-50 w-full'>
         <header className='glass-effect glow-box-sm flex select-none items-center justify-between rounded-b-xl rounded-t-none px-5 py-3 text-lg font-semibold sm:mx-10 sm:my-5 sm:rounded-xl sm:px-10 sm:py-4'>
           <AnimBorder rounded>
-            <Link href='/' aria-label='Home'>
+            <Link href='/' aria-label='Home' scroll={false}>
               <Avatar className='glass-effect h-16 w-16'>
                 <AvatarImage
                   src='/icons/android-chrome-192x192.png'
@@ -77,7 +77,7 @@ const Header: FC = () => {
             <NavigationMenuList className='hidden sm:flex'>
               {menus.map((menu, i) => (
                 <NavigationMenuItem key={`menu${i}`}>
-                  <Link href={menu.link} legacyBehavior passHref>
+                  <Link href={menu.link} legacyBehavior passHref scroll={false}>
                     <NavigationMenuLink
                       target={menu.link.startsWith('http') ? '_blank' : '_self'}
                       className={cn(
