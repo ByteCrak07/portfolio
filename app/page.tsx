@@ -37,7 +37,7 @@ export default function Home() {
     const ctx = gsap.context((self: any) => {
       const leftSections: HTMLElement[] = self.selector('.left-section');
       leftSections.forEach((section) => {
-        const timeline1 = gsap.timeline({
+        const timeline = gsap.timeline({
           scrollTrigger: {
             trigger: section,
             start: '100vh bottom',
@@ -47,14 +47,14 @@ export default function Home() {
           },
         });
 
-        timeline1.from(section, {
+        timeline.from(section, {
           transform: 'translateX(-150%)',
         });
       });
 
       const rightSections: HTMLElement[] = self.selector('.right-section');
       rightSections.forEach((section) => {
-        const timeline1 = gsap.timeline({
+        const timeline = gsap.timeline({
           scrollTrigger: {
             trigger: section,
             start: '100vh bottom',
@@ -64,7 +64,7 @@ export default function Home() {
           },
         });
 
-        timeline1.from(section, {
+        timeline.from(section, {
           transform: 'translateX(150%)',
         });
       });
@@ -77,7 +77,7 @@ export default function Home() {
 
   return (
     <main
-      className='mt-[92px] flex flex-grow flex-col overflow-x-hidden sm:mt-[148px]'
+      className='mx-auto mt-[92px] flex max-w-[2500px] flex-grow flex-col overflow-x-hidden sm:mt-[148px]'
       ref={main}
     >
       <section className='glass-effect glow-box-sm m-3 mt-5 flex flex-col rounded-xl px-6 py-10 sm:mx-16 sm:mb-10 sm:px-32 sm:py-20 lg:mx-36'>

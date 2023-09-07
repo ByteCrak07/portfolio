@@ -31,6 +31,17 @@ interface ProjectProps extends ProjectData {
 const Projects: FC = () => {
   const projectsData: ProjectData[] = [
     {
+      id: 'scaffold-eth-bb',
+      imgSrc: '/assets/projects/scaffold-eth-bb.png',
+      imgBlurDataURL:
+        'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgICAgMCAgIDAwMDBAYEBAQEBAgGBgUGCQgKCgkICQkKDA8MCgsOCwkJDRENDg8QEBEQCgwSExIQEw8QEBD/2wBDAQMDAwQDBAgEBAgQCwkLEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBD/wAARCAAGAAwDAREAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAn/xAAcEAEBAAICAwAAAAAAAAAAAAABAgASAwQhUWH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AqR244oqb0Nro2QPJ9wFSTIEgHowP/9k=',
+      title: 'Scaffold-eth x Buildbear',
+      content:
+        'Quickly experiment with Solidity using a forked private testnet, from the mainnet, and swapping tokens from Uniswap. Scaffold-Eth x Buildbear lets you create your own private testnet, (optional) forked from the mainnet, with your own native token and ERC20 Token faucet and blockchain explorer',
+      icons: [react, solidityWhite],
+      github: 'https://github.com/BuildBearLabs/scaffold-eth',
+    },
+    {
       id: 'synchro.rs',
       imgSrc: '/assets/projects/synchro.rs.png',
       imgBlurDataURL:
