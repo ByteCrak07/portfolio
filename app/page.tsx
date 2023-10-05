@@ -80,8 +80,8 @@ export default function Home() {
       className='mx-auto mt-[92px] flex max-w-[2500px] flex-grow flex-col overflow-x-hidden sm:mt-[148px]'
       ref={main}
     >
-      <section className='glass-effect glow-box-sm m-3 mt-5 flex flex-col rounded-xl px-6 py-10 sm:mx-16 sm:mb-10 sm:px-32 sm:py-20 lg:mx-36'>
-        <div className='relative flex flex-col items-center justify-center gap-x-28 gap-y-5 lg:flex-row'>
+      <section className='glass-effect glow-box-sm section'>
+        <div className='relative flex flex-col items-center justify-center gap-x-20 gap-y-5 lg:flex-row xl:gap-x-28'>
           <IntroLoader />
           <div className='flex-[7]'>
             <IntroLoader image />
@@ -109,7 +109,7 @@ export default function Home() {
 
       <section
         id='projects'
-        className='left-section glass-effect glow-box-sm m-3 mt-10 flex flex-col rounded-xl px-6 py-10 sm:mx-16 sm:my-10 sm:px-32 sm:py-20 lg:mx-36'
+        className='left-section glass-effect glow-box-sm section'
       >
         <h2 className='text-3xl font-bold sm:text-4xl'>Projects</h2>
         <p className='mt-2 text-base sm:text-lg'>
@@ -121,7 +121,7 @@ export default function Home() {
 
       <section
         id='experience'
-        className='right-section glass-effect glow-box-sm m-3 mt-10 flex flex-col rounded-xl px-6 py-10 sm:mx-16 sm:my-10 sm:px-32 sm:py-20 lg:mx-36'
+        className='right-section glass-effect glow-box-sm section'
       >
         <h2 className='text-3xl font-bold sm:text-4xl'>Experience</h2>
         <p className='mt-2 text-base sm:text-lg'>
@@ -132,7 +132,7 @@ export default function Home() {
 
       <section
         id='blogs'
-        className='left-section glass-effect glow-box-sm m-3 mt-10 flex flex-col rounded-xl px-6 py-10 sm:mx-16 sm:my-10 sm:px-32 sm:py-20 lg:mx-36'
+        className='left-section glass-effect glow-box-sm section'
       >
         <h2 className='text-3xl font-bold sm:text-4xl'>Blogs</h2>
         <p className='mt-2 text-base sm:text-lg'>
@@ -152,7 +152,7 @@ export default function Home() {
 
       <section
         id='contact'
-        className='right-section glass-effect glow-box-sm m-3 mt-10 flex flex-col rounded-xl px-6 py-10 sm:mx-16 sm:my-10 sm:px-32 sm:py-20 lg:mx-36'
+        className='right-section glass-effect glow-box-sm section'
       >
         <h2 className='text-3xl font-bold sm:text-4xl'>Contact</h2>
         <p className='mt-2 text-base sm:text-lg'>

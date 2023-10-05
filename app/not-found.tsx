@@ -3,7 +3,7 @@ import { NotFoundImg } from '@/components/app';
 
 export default function NotFound() {
   return (
-    <div className='flex min-h-[80vh] flex-col-reverse items-center justify-center gap-x-28 p-10 md:flex-row'>
+    <div className='mt-[92px] flex flex-1 flex-col-reverse items-center justify-center gap-x-28 p-10 sm:mt-[148px] md:flex-row'>
       <div className='relative scale-75 md:scale-100'>
         <div className='absolute -top-20 left-10'>
           <div className='w-20 border-[20px] border-b-[40px] border-t-0 border-transparent border-b-gray-600'></div>
