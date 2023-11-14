@@ -14,6 +14,7 @@ const SocialLinks: FC = () => {
             target='_blank'
             rel='noopener noreferrer'
             bgColor='#fff'
+            fgColor='#000'
             aria-label='Github'
           />
         </div>
