@@ -24,6 +24,7 @@
     "@react-email/render": "^0.0.9",
     "@studio-freight/react-lenis": "^0.0.37",
     "@vercel/analytics": "^1.1.1",
+    "@vercel/speed-insights": "^1.0.9",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "cmdk": "^0.2.0",

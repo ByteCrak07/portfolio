@@ -3,6 +3,7 @@
 import { FC, useEffect } from 'react';
 import { GoogleAnalytics, event } from 'nextjs-google-analytics';
 import { Analytics as VercelAnalytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import Hotjar from '@hotjar/browser';
 import { useReportWebVitals } from 'next/web-vitals';
 
@@ -52,6 +53,7 @@ const Analytics: FC = () => {
         <GoogleAnalytics trackPageViews strategy='lazyOnload' />
       )}
       <VercelAnalytics />
+      <SpeedInsights />
     </>
   );
 };
