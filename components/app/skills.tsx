@@ -2,6 +2,7 @@
 
 import { FC, JSX } from 'react';
 import { Jost } from 'next/font/google';
+import { ReactLenis } from '@studio-freight/react-lenis';
 import {
   Dialog,
   DialogContent,
@@ -56,8 +57,6 @@ const jostFont = Jost({
   subsets: ['latin'],
   display: 'swap',
 });
-
-// svg icons
 
 const TopSkills: FC = () => {
   return (
@@ -169,9 +168,11 @@ const AllSkillsWrapper: FC = () => {
           <DialogTitle className='flex h-10 items-center text-3xl'>
             All Skills
           </DialogTitle>
-          <DialogFooter className='block h-full overflow-auto px-1 text-gray-200'>
-            <AllSkills />
-          </DialogFooter>
+          <ReactLenis className='h-full overflow-auto'>
+            <DialogFooter className='block px-1 text-gray-200'>
+              <AllSkills />
+            </DialogFooter>
+          </ReactLenis>
         </DialogContent>
       </Dialog>
     </>

@@ -30,6 +30,8 @@ const Command: FC<{ iconOnly?: boolean }> = ({ iconOnly }) => {
 
   // to open command dialog on pressing cmd+k
   useEffect(() => {
+    if (iconOnly) return;
+
     const down = (e: KeyboardEvent) => {
       if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
@@ -42,7 +44,7 @@ const Command: FC<{ iconOnly?: boolean }> = ({ iconOnly }) => {
 
     document.addEventListener('keydown', down);
     return () => document.removeEventListener('keydown', down);
-  }, []);
+  }, [iconOnly]);
 
   const openCommand = () => {
     setOpen(true);
