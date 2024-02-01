@@ -15,6 +15,29 @@ const Experience: FC = () => {
           <div className='text-lg text-slate-200'>Today</div>
         </li>
 
+        <li id='beyondclub' className='mb-10 ml-4'>
+          <div className='bg-glow absolute -left-[7px] mt-1.5 h-3 w-3 rounded-full border border-slate-800'></div>
+          <time className='text-glow mb-1 text-sm font-normal leading-none'>
+            October 2023
+          </time>
+          <h3 className='text-2xl font-semibold text-white'>
+            Full Stack Developer
+          </h3>
+          <h4 className='text-lg text-slate-200'>
+            <a
+              href='https://www.beyondclub.xyz'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='hover:text-white'
+            >
+              @ beyondClub
+            </a>
+          </h4>
+          <p className='my-4 text-justify text-base text-slate-400'>
+            Coming soon... 🚀
+          </p>
+        </li>
+
         <li id='buildbear-labs' className='mb-10 ml-4'>
           <div className='bg-glow absolute -left-[7px] mt-1.5 h-3 w-3 rounded-full border border-slate-800'></div>
           <time className='text-glow mb-1 text-sm font-normal leading-none'>

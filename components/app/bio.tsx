@@ -116,7 +116,7 @@ const Bio: FC = () => {
         <br />
         {`I'm a self taught developer and I'm currently learning Rust.
           Problem solving, learning new technologies and building cool stuff is what I love to do. 
-          Currently, exploring the facinating world of Web3 and I'm working at `
+          Currently, exploring the facinating world of Web3 and I'm a Full Stack Developer building `
           .split('')
           .map((i, index) =>
             i == ' ' ? (
@@ -128,10 +128,10 @@ const Bio: FC = () => {
         <a
           className={completedTxtRender ? 'hover:underline' : ''}
           target='_blank'
-          href='https://www.buildbear.io'
+          href='https://www.beyondclub.xyz'
           rel='noopener noreferrer'
         >
-          {`BuildBear Labs`
+          {`beyondClub`
             .split('')
             .map((i, index) =>
               i == ' ' ? (
@@ -141,7 +141,7 @@ const Bio: FC = () => {
               ),
             )}
         </a>
-        {` as a Full Stack Intern.`
+        {`. `
           .split('')
           .map((i, index) =>
             i == ' ' ? (
@@ -190,7 +190,7 @@ const Bio: FC = () => {
           I&apos;m a self taught developer and I&apos;m currently learning Rust.
           Problem solving, learning new technologies and building cool stuff is
           what I love to do. Currently, exploring the facinating world of Web3
-          and I&apos;m working at BuildBear Labs as a Full Stack Intern.
+          and I&apos;m a Full Stack Developer building beyondClub.
         </div>
         <div className='flex items-center'>
           <div

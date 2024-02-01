@@ -125,6 +125,10 @@ const Command: FC<{ iconOnly?: boolean }> = ({ iconOnly }) => {
 
   const experiences = [
     {
+      name: 'beyondClub',
+      link: '/#beyondclub',
+    },
+    {
       name: 'Buildbear Labs',
       link: '/#buildbear-labs',
     },
