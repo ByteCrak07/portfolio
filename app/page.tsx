@@ -167,7 +167,9 @@ function Home() {
 
 export default function HomePage() {
   return (
-    <Suspense>
+    <Suspense
+      fallback={<div className='absolute inset-0 z-10 bg-background'></div>}
+    >
       <Home />
     </Suspense>
   );
