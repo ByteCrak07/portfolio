@@ -39,7 +39,7 @@ const Header: FC = () => {
     },
     {
       name: 'Blogs',
-      link: 'https://blog.abilsavio.tech',
+      link: 'https://blog.abilsavio.dev',
     },
     {
       name: 'Contact',

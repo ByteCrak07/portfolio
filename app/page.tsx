@@ -140,11 +140,11 @@ export default function Home() {
           journey as a developer. Explore all my blogs at{' '}
           <a
             className='hover:text-glow font-semibold underline hover:cursor-pointer'
-            href='https://blog.abilsavio.tech'
+            href='https://blog.abilsavio.dev'
             target='_blank'
             rel='noopener noreferrer'
           >
-            blog.abilsavio.tech
+            blog.abilsavio.dev
           </a>
         </p>
         <Blogs />

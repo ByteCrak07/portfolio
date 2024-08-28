@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 const description = `Hey I'm Abil Savio, a Full Stack Web & Blockchain Developer from Kerala, India. Browse my portfolio, explore projects, read through the blog posts and tutorials.`;
-const url = 'https://abilsavio.tech';
+const url = 'https://abilsavio.dev';
 
 export const metadata: Metadata = {
   title: {

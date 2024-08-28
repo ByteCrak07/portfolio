@@ -24,7 +24,7 @@ const Blogs: FC = () => {
       title: 'Email contact form using NextJS (App router)',
       content:
         'Simple tutorial for using NextJS with app router to create a contact form to send messages to your email using nodemailer — An overview of what we’ll be doing here You must have come across contact forms on a lot of websites on the internet. We will be building a similar contact form.',
-      link: 'https://blog.abilsavio.tech/email-contact-form-using-nextjs-app-router',
+      link: 'https://blog.abilsavio.dev/email-contact-form-using-nextjs-app-router',
       date: 'July 18 2023',
       timeToRead: 7,
     },
@@ -35,7 +35,7 @@ const Blogs: FC = () => {
       title: 'Pocketbase OAuth on NextJS',
       content:
         "A simple tutorial on implementing Google & GitHub OAuth in NextJS using Pocketbase — A brief introduction to Pocketbase & NextJS Most of you folks must have already heard about Pocketbase and also about Next.JS and that's why you are here in the first place.",
-      link: 'https://blog.abilsavio.tech/pocketbase-oauth-on-nextjs',
+      link: 'https://blog.abilsavio.dev/pocketbase-oauth-on-nextjs',
       date: 'March 7 2023',
       timeToRead: 9,
     },

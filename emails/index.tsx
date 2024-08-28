@@ -21,7 +21,7 @@ interface ContactEmailProps {
   message: string;
 }
 
-const baseUrl = 'https://abilsavio.tech';
+const baseUrl = 'https://abilsavio.dev';
 
 export const ContactEmail: FC<ContactEmailProps> = ({
   fullname,
@@ -51,7 +51,7 @@ export const ContactEmail: FC<ContactEmailProps> = ({
             </Column>
             <Column align='right'>
               <Link style={headingLink} href={baseUrl}>
-                abilsavio.tech
+                abilsavio.dev
               </Link>
             </Column>
           </Section>

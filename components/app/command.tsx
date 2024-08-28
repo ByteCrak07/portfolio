@@ -149,11 +149,11 @@ const Command: FC<{ iconOnly?: boolean }> = ({ iconOnly }) => {
   const blogs = [
     {
       name: 'Email contact form using NextJS (App router)',
-      link: 'https://blog.abilsavio.tech/email-contact-form-using-nextjs-app-router',
+      link: 'https://blog.abilsavio.dev/email-contact-form-using-nextjs-app-router',
     },
     {
       name: 'Pocketbase OAuth on NextJS',
-      link: 'https://blog.abilsavio.tech/pocketbase-oauth-on-nextjs',
+      link: 'https://blog.abilsavio.dev/pocketbase-oauth-on-nextjs',
     },
   ];
 
