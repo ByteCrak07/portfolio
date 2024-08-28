@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { Suspense, useEffect, useRef } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useLenis } from '@studio-freight/react-lenis';
 import { gsap } from 'gsap';
@@ -20,7 +20,7 @@ import {
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Home() {
+function Home() {
   const searchParams = useSearchParams();
   const main = useRef<HTMLElement>(null);
   const lenis = useLenis();
@@ -162,5 +162,13 @@ export default function Home() {
         <Contact />
       </section>
     </main>
+  );
+}
+
+export default function HomePage() {
+  return (
+    <Suspense>
+      <Home />
+    </Suspense>
   );
 }
